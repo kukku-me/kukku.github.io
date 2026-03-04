@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kukku User Guide" />
+    <title>Kukku Docs - User Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .docs-wrap {
+        display: grid;
+        gap: 24px;
+      }
+      .docs-hero {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 20px 44px rgba(10, 11, 13, 0.1);
+      }
+      .docs-hero h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(2rem, 4.1vw, 3.2rem);
+        margin-bottom: 12px;
+      }
+      .docs-tabs {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .docs-tab {
+        text-decoration: none;
+        border: 1px solid var(--line);
+        padding: 8px 14px;
+        border-radius: 999px;
+        color: var(--ink);
+        background: #fff;
+        font-size: 0.9rem;
+      }
+      .docs-tab.active {
+        background: var(--sea);
+        color: #fff;
+        border-color: transparent;
+      }
+      .doc-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: 0 14px 28px rgba(10, 11, 13, 0.08);
+      }
+      .doc-card h2 {
+        font-family: "Fraunces", serif;
+        font-size: 1.45rem;
+        margin-bottom: 10px;
+      }
+      .doc-card h3 {
+        margin-top: 14px;
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+      .doc-card p, .doc-card li {
+        line-height: 1.6;
+        color: rgba(10, 11, 13, 0.78);
+      }
+      .doc-card ul, .doc-card ol {
+        padding-left: 18px;
+        display: grid;
+        gap: 6px;
+      }
+      .note {
+        border-left: 3px solid var(--sea);
+        padding: 10px 12px;
+        background: rgba(199, 230, 242, 0.3);
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="brand">
+        <img class="brand-icon" src="KukkuIcon.png" alt="Kukku" />
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="intro.html">Company</a>
+        <div class="nav-item has-dropdown">
+          <a href="docs-user.html">Docs</a>
+          <div class="nav-dropdown">
+            <a href="docs-user.html">User Guide</a>
+            <a href="docs-platform.html">Platform Guide</a>
+            <a href="docs-tools.html">Tools Guide</a>
+          </div>
+        </div>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </header>
+
+    <main class="docs-wrap">
+      <section class="docs-hero">
+        <p class="eyebrow">Documentation</p>
+        <h1>Kukku User Guide</h1>
+        <p class="lede">Everything needed to set up Kukku, connect agents and bots, use tools, and work productively without deep technical setup.</p>
+        <div class="docs-tabs">
+          <a class="docs-tab active" href="docs-user.html">User Guide</a>
+          <a class="docs-tab" href="docs-platform.html">Platform Guide</a>
+          <a class="docs-tab" href="docs-tools.html">Tools Guide</a>
+        </div>
+      </section>
+
+      <section class="doc-card">
+        <h2>1. Quick Start</h2>
+        <ol>
+          <li>Complete onboarding and model setup.</li>
+          <li>Select an agent from your dashboard.</li>
+          <li>Ask your first question (text or image).</li>
+          <li>Enable required tools for your workflow.</li>
+          <li>Upload documents if you want document-grounded answers.</li>
+        </ol>
+        <p class="note"><strong>Premium Subscription:</strong> Required for Analyzer mode (tools orchestration), Near By Kukku Agents, and Near By Kukku Bots.</p>
+      </section>
+
+      <section class="doc-card">
+        <h2>2. Model Setup and Modes</h2>
+        <p>Kukku provides two routing modes in setup:</p>
+        <ul>
+          <li><strong>Analyzer mode:</strong> Required for all tool orchestration and multi-step tool execution.</li>
+          <li><strong>Direct mode:</strong> Direct responses only; tool flows are not available in this mode.</li>
+        </ul>
+        <p><strong>Subscription note:</strong> Tool usage requires Analyzer mode and Premium subscription. Basic mode uses Direct routing without tool flows.</p>
+        <h3>Advanced settings</h3>
+        <p>Fine-tune quality/performance with temperature, top-p, repetition controls, and token limits.</p>
+      </section>
+
+      <section class="doc-card">
+        <h2>3. Quick Agent Setup and Editing</h2>
+        <h3>Quick Agent Setup</h3>
+        <ol>
+          <li>Open agent actions and choose Quick Agent Setup.</li>
+          <li>Pick domain/expertise and define role/personality.</li>
+          <li>Select recommended tools for that role.</li>
+          <li>Review prompts and save.</li>
+        </ol>
+        <p>Quick Agent Setup is designed for general device compatibility and does not require high-memory hardware.</p>
+        <h3>Edit Agents</h3>
+        <ul>
+          <li>Update name, description, personality, suggested prompts, and response style.</li>
+          <li>Adjust routing behavior and workflow intent for the agent.</li>
+          <li>Revisit tool assignment after every major agent change.</li>
+        </ul>
+      </section>
+
+      <section class="doc-card">
+        <h2>4. Tools Management (Practical)</h2>
+        <ol>
+          <li>Open Tools and create or edit tool entries.</li>
+          <li>Configure credentials for provider-backed tools.</li>
+          <li>Add custom keywords when you want stronger tool routing hints.</li>
+          <li>Assign tools to specific agents only where needed.</li>
+          <li>Use ToolPack import if required tool groups are missing.</li>
+        </ol>
+        <p class="note">If a tool is not used during chat, check: agent assignment, permissions, credentials, and tool keywords.</p>
+      </section>
+
+      <section class="doc-card">
+        <h2>5. Team Agents</h2>
+        <ul>
+          <li>Team Agents orchestrate multiple member agents for larger workflows.</li>
+          <li>Use Team Agents when you need multi-step, multi-specialist responses.</li>
+          <li>Best experience is on high-memory devices due to higher runtime load.</li>
+        </ul>
+        <p class="note"><strong>Recommendation:</strong> Use Team Agents primarily on higher-memory devices for smoother performance.</p>
+      </section>
+
+      <section class="doc-card">
+        <h2>6. Connecting to Near By Kukku Agents</h2>
+        <ol>
+          <li>Open <strong>Near By Kukku Agents</strong> from dashboard.</li>
+          <li>Set a pairing password in <strong>Pairing Security</strong> (required).</li>
+          <li>Tap <strong>Scan</strong> to discover nearby peers.</li>
+          <li>Select a peer and tap <strong>Connect (Locked)</strong>.</li>
+          <li>Enter pairing password if prompted.</li>
+          <li>After connection, wait for remote agent list.</li>
+          <li>Tap <strong>Add</strong> on any remote agent to include it in your dashboard.</li>
+        </ol>
+        <p class="note"><strong>Premium only:</strong> Near By Kukku Agents requires Premium subscription. Insecure peers are not connectable.</p>
+      </section>
+
+      <section class="doc-card">
+        <h2>7. Connecting to Near By Kukku Bots</h2>
+        <ol>
+          <li>Open <strong>Near By Kukku Bots</strong> from dashboard.</li>
+          <li>Scan and select a discovered bot.</li>
+          <li>Add your <strong>Gateway Token</strong> in the bot flow.</li>
+          <li>Tap <strong>Connect</strong> and complete approval if requested.</li>
+          <li>Tap <strong>Discover</strong> to load remote bot agents.</li>
+          <li>Tap <strong>Add</strong> to bridge selected agents into dashboard.</li>
+        </ol>
+        <p class="note"><strong>Premium only:</strong> Near By Kukku Bots requires Premium subscription. OpenClaw-compatible local gateway discovery is supported; no special Wi-Fi name is required.</p>
+      </section>
+
+      <section class="doc-card">
+        <h2>8. Tools and Output Cards</h2>
+        <p>Assign tools to each agent based on use case (search, reminders, calendar, messaging, knowledge, finance, sports).</p>
+        <p>For per-tool setup and examples, use the dedicated <a href="docs-tools.html">Tools Guide</a>.</p>
+        <ul>
+          <li>For messaging tools, Kukku may resolve recipient details first using contacts.</li>
+          <li>Health and stock flows can render specialized cards in chat for easier consumption.</li>
+          <li>If a tool fails, verify permission + API setup + agent assignment.</li>
+        </ul>
+      </section>
+
+      <section class="doc-card">
+        <h2>9. Documents and Backup</h2>
+        <h3>Document workflows</h3>
+        <ul>
+          <li>Upload PDF, image, or text files in Document Library, or attach using the chat <strong>Files</strong> option.</li>
+          <li>Wait for processing before asking document-specific questions.</li>
+          <li>Use clear prompts and include document name for precise retrieval.</li>
+          <li>If retrieval does not trigger on first try, use phrases like <strong>“this file”</strong>, <strong>“uploaded document”</strong>, or <strong>“recent pdf”</strong> in your prompt.</li>
+        </ul>
+        <p class="note">Fallback tip: if document tools are not triggered automatically, rephrase with explicit file context and retry in the same chat.</p>
+        <h3>Backup and restore</h3>
+        <p>Backups include agents, tools, and setup preferences. API keys are redacted by design and must be re-entered after restore.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Kukku Me.</p>
+    </footer>
+  </body>
+</html>

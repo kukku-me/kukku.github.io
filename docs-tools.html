@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kukku Tools User Guide" />
+    <title>Kukku Docs - Tools Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .docs-wrap {
+        display: grid;
+        gap: 24px;
+      }
+      .docs-hero {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 20px 44px rgba(10, 11, 13, 0.1);
+      }
+      .docs-hero h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(2rem, 4.1vw, 3.2rem);
+        margin-bottom: 12px;
+      }
+      .docs-tabs {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .docs-tab {
+        text-decoration: none;
+        border: 1px solid var(--line);
+        padding: 8px 14px;
+        border-radius: 999px;
+        color: var(--ink);
+        background: #fff;
+        font-size: 0.9rem;
+      }
+      .docs-tab.active {
+        background: var(--sea);
+        color: #fff;
+        border-color: transparent;
+      }
+      .doc-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: 0 14px 28px rgba(10, 11, 13, 0.08);
+      }
+      .doc-card h2 {
+        font-family: "Fraunces", serif;
+        margin-bottom: 10px;
+      }
+      .doc-card h3 {
+        margin-top: 16px;
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+      }
+      .doc-card p,
+      .doc-card li {
+        line-height: 1.6;
+        color: rgba(10, 11, 13, 0.78);
+      }
+      .doc-card ul,
+      .doc-card ol {
+        padding-left: 18px;
+        display: grid;
+        gap: 6px;
+      }
+      .tool-index {
+        columns: 2;
+        column-gap: 28px;
+      }
+      .tool-index li {
+        break-inside: avoid;
+      }
+      .tool-index a {
+        color: var(--sea-dark);
+        text-decoration: none;
+        border-bottom: 1px dashed rgba(11, 60, 68, 0.35);
+      }
+      .tool-index a:hover {
+        color: var(--sea);
+      }
+      .tool-section {
+        scroll-margin-top: 90px;
+      }
+      .note {
+        border-left: 3px solid var(--sea);
+        padding: 10px 12px;
+        background: rgba(199, 230, 242, 0.3);
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+      @media (max-width: 900px) {
+        .tool-index {
+          columns: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="brand">
+        <img class="brand-icon" src="KukkuIcon.png" alt="Kukku" />
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="intro.html">Company</a>
+        <div class="nav-item has-dropdown">
+          <a href="docs-user.html">Docs</a>
+          <div class="nav-dropdown">
+            <a href="docs-user.html">User Guide</a>
+            <a href="docs-platform.html">Platform Guide</a>
+            <a href="docs-tools.html">Tools Guide</a>
+          </div>
+        </div>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </header>
+
+    <main class="docs-wrap">
+      <section class="docs-hero">
+        <p class="eyebrow">Documentation</p>
+        <h1>Kukku Tools User Guide</h1>
+        <p class="lede">A practical reference for end-user tools currently exposed in Kukku. Use the index below to jump to each tool section.</p>
+        <div class="docs-tabs">
+          <a class="docs-tab" href="docs-user.html">User Guide</a>
+          <a class="docs-tab" href="docs-platform.html">Platform Guide</a>
+          <a class="docs-tab active" href="docs-tools.html">Tools Guide</a>
+        </div>
+      </section>
+
+      <section class="doc-card">
+        <h2>Scope and Access</h2>
+        <ul>
+          <li>This page includes only currently visible end-user tool types.</li>
+          <li>Hidden/internal tools are intentionally excluded from public docs.</li>
+          <li><strong>Premium Subscription:</strong> Required for Analyzer mode and all tool orchestration. Direct mode does not run tool flows.</li>
+        </ul>
+      </section>
+
+      <section class="doc-card">
+        <h2>Tool Index</h2>
+        <ol class="tool-index">
+          <li><a href="#tool-web-search">Web Search</a></li>
+          <li><a href="#tool-weather">Weather</a></li>
+          <li><a href="#tool-date-time">Date and Time</a></li>
+          <li><a href="#tool-calculator">Calculator</a></li>
+          <li><a href="#tool-calendar">Calendar</a></li>
+          <li><a href="#tool-reminders">Reminders</a></li>
+          <li><a href="#tool-contacts">Contacts</a></li>
+          <li><a href="#tool-email">Email</a></li>
+          <li><a href="#tool-gmail">Gmail</a></li>
+          <li><a href="#tool-imessage">iMessage</a></li>
+          <li><a href="#tool-whatsapp">WhatsApp</a></li>
+          <li><a href="#tool-telegram">Telegram</a></li>
+          <li><a href="#tool-image-analysis">Image Analysis</a></li>
+          <li><a href="#tool-knowledge-base">Knowledge Base</a></li>
+          <li><a href="#tool-custom">Custom Tool</a></li>
+        </ol>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-web-search">
+        <h2>Web Search</h2>
+        <p>Use this tool to retrieve current web information when your question depends on fresh or external data.</p>
+        <ul>
+          <li>Best for: news checks, quick verification, and source-backed summaries.</li>
+          <li>Example prompt: "Find the latest update on topic X and summarize key points."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-weather">
+        <h2>Weather</h2>
+        <p>Provides local weather conditions and forecast context.</p>
+        <ul>
+          <li>Best for: trip planning, outdoor scheduling, and forecast lookup.</li>
+          <li>Example prompt: "What is the weather tomorrow in Singapore?"</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-date-time">
+        <h2>Date and Time</h2>
+        <p>Resolves current date and timezone-related time questions.</p>
+        <ul>
+          <li>Best for: timezone conversion, schedule confirmation, current time lookup.</li>
+          <li>Example prompt: "What time is it now in New York?"</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-calculator">
+        <h2>Calculator</h2>
+        <p>Performs arithmetic and quick numeric calculations.</p>
+        <ul>
+          <li>Best for: totals, percentages, and unit-style numeric checks.</li>
+          <li>Example prompt: "Calculate 18% tip on 86.50 and total amount."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-calendar">
+        <h2>Calendar</h2>
+        <p>Reads and manages events when calendar permissions are granted.</p>
+        <ul>
+          <li>Best for: meeting lookup, conflict checks, and event planning.</li>
+          <li>Example prompt: "Do I have free time between 3 PM and 5 PM tomorrow?"</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-reminders">
+        <h2>Reminders</h2>
+        <p>Creates and updates reminders and personal task items.</p>
+        <ul>
+          <li>Best for: simple task capture with due dates and follow-ups.</li>
+          <li>Example prompt: "Remind me to send the report at 9 AM tomorrow."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-contacts">
+        <h2>Contacts</h2>
+        <p>Finds recipient details for communication workflows.</p>
+        <ul>
+          <li>Best for: resolving names to phone/email targets before sending.</li>
+          <li>Example prompt: "Find Priya's mobile number in my contacts."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-email">
+        <h2>Email</h2>
+        <p>Composes or sends email through configured account integrations.</p>
+        <ul>
+          <li>Best for: draft generation and assisted email workflows.</li>
+          <li>Example prompt: "Draft an email to product team with this status update."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-gmail">
+        <h2>Gmail</h2>
+        <p>Handles Gmail-specific mail actions when Gmail integration is enabled.</p>
+        <ul>
+          <li>Best for: Gmail draft/send/search workflows.</li>
+          <li>Example prompt: "Search my Gmail for invoices from last month."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-imessage">
+        <h2>iMessage</h2>
+        <p>Supports iMessage sending flows with recipient resolution.</p>
+        <ul>
+          <li>Best for: quick text communication from inside Kukku.</li>
+          <li>Example prompt: "Send Alex: I will join in 10 minutes."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-whatsapp">
+        <h2>WhatsApp</h2>
+        <p>Prepares and routes WhatsApp message actions.</p>
+        <ul>
+          <li>Best for: fast chat communication with known recipients.</li>
+          <li>Example prompt: "Message Nikhil on WhatsApp: meeting moved to 4 PM."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-telegram">
+        <h2>Telegram</h2>
+        <p>Supports Telegram messaging workflows with configured access.</p>
+        <ul>
+          <li>Best for: direct or channel-oriented communication tasks.</li>
+          <li>Example prompt: "Send a Telegram update: deployment completed successfully."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-image-analysis">
+        <h2>Image Analysis</h2>
+        <p>Extracts and explains visual information from images shared in chat.</p>
+        <ul>
+          <li>Best for: OCR-style reading, scene interpretation, and visual QA.</li>
+          <li>Example prompt: "Read the text in this image and summarize it."</li>
+        </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-knowledge-base">
+        <h2>Knowledge Base</h2>
+        <p>Uses uploaded files to answer document-grounded questions.</p>
+        <ul>
+          <li>Best for: contracts, policies, reports, and reference documents.</li>
+          <li>Example prompt: "Find termination terms in this file."</li>
+        </ul>
+        <p class="note"><strong>Important:</strong> If automatic tool routing is not triggered, use the Files option and reference terms like "this file", "uploaded document", or "recent pdf" in your prompt to activate document-aware fallback behavior.</p>
+        <p class="note"><strong>Limitations:</strong> Max import pages and file size are adjusted automatically based on available device memory. Higher-memory devices can import larger and longer PDFs.</p>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-custom">
+        <h2>Custom Tool</h2>
+        <p>Runs user-defined tool configurations for domain-specific tasks.</p>
+        <ul>
+          <li>Best for: private APIs and custom actions not covered by default tools.</li>
+          <li>Example prompt: "Run my CRM sync tool and summarize new leads."</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
