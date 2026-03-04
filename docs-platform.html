@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kukku Platform Guide" />
+    <title>Kukku Docs - Platform Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .docs-wrap {
+        display: grid;
+        gap: 24px;
+      }
+      .docs-hero {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 20px 44px rgba(10, 11, 13, 0.1);
+      }
+      .docs-hero h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(2rem, 4.1vw, 3.2rem);
+        margin-bottom: 12px;
+      }
+      .docs-tabs {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .docs-tab {
+        text-decoration: none;
+        border: 1px solid var(--line);
+        padding: 8px 14px;
+        border-radius: 999px;
+        color: var(--ink);
+        background: #fff;
+        font-size: 0.9rem;
+      }
+      .docs-tab.active {
+        background: var(--sea);
+        color: #fff;
+        border-color: transparent;
+      }
+      .doc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 14px;
+      }
+      .doc-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 14px 28px rgba(10, 11, 13, 0.08);
+      }
+      .doc-card h2 {
+        font-family: "Fraunces", serif;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+      .doc-card p, .doc-card li {
+        line-height: 1.6;
+        color: rgba(10, 11, 13, 0.78);
+      }
+      .doc-card ul {
+        padding-left: 18px;
+        display: grid;
+        gap: 6px;
+      }
+      .callout {
+        border-left: 3px solid var(--sea);
+        background: rgba(199, 230, 242, 0.32);
+        border-radius: 10px;
+        padding: 10px 12px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="brand">
+        <img class="brand-icon" src="KukkuIcon.png" alt="Kukku" />
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="intro.html">Company</a>
+        <div class="nav-item has-dropdown">
+          <a href="docs-user.html">Docs</a>
+          <div class="nav-dropdown">
+            <a href="docs-user.html">User Guide</a>
+            <a href="docs-platform.html">Platform Guide</a>
+            <a href="docs-tools.html">Tools Guide</a>
+          </div>
+        </div>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </header>
+
+    <main class="docs-wrap">
+      <section class="docs-hero">
+        <p class="eyebrow">Documentation</p>
+        <h1>Kukku Platform Guide</h1>
+        <p class="lede">Public technical guide for teams using Kukku as an on-device AI platform, with practical operational details and no sensitive implementation internals.</p>
+        <div class="docs-tabs">
+          <a class="docs-tab" href="docs-user.html">User Guide</a>
+          <a class="docs-tab active" href="docs-platform.html">Platform Guide</a>
+          <a class="docs-tab" href="docs-tools.html">Tools Guide</a>
+        </div>
+      </section>
+
+      <section class="doc-grid">
+        <article class="doc-card">
+          <h2>Platform Model</h2>
+          <ul>
+            <li>Available on <strong>iOS</strong> and <strong>macOS</strong>.</li>
+            <li>Agent-first architecture for specialized workflows.</li>
+            <li>On-device-first processing with optional external tools.</li>
+            <li>Modular capabilities: tools, documents, nearby collaboration, profile and backup.</li>
+          </ul>
+        </article>
+
+        <article class="doc-card">
+          <h2>Routing and Execution</h2>
+          <ul>
+            <li><strong>Analyzer mode</strong> required for tool orchestration and planned multi-tool workflows.</li>
+            <li><strong>Direct mode</strong> provides low-latency direct responses only; tool flows are disabled.</li>
+            <li>Optional deterministic workflow sequencing per agent.</li>
+            <li>Keyword-guided tool selection with rule-based safeguards.</li>
+          </ul>
+          <p class="callout"><strong>Premium Subscription:</strong> Required for Analyzer mode and all tool orchestration.</p>
+        </article>
+
+        <article class="doc-card">
+          <h2>Model Setup and Memory Planning</h2>
+          <ul>
+            <li>Higher-memory configurations can expose <strong>4B parameter</strong> models quantized to <strong>8-bit</strong>.</li>
+            <li>These larger 4B model options are not shown in iOS model picker.</li>
+            <li>On lower-memory devices, use the default low-memory model profile.</li>
+            <li>Selecting oversized models on low-memory devices can cause unpredictable responses and app instability, including possible crashes due to memory pressure.</li>
+          </ul>
+          <p class="callout"><strong>Recommendation:</strong> Keep the default low model selection on lower-memory devices unless you have validated stability for your workload.</p>
+        </article>
+
+        <article class="doc-card">
+          <h2>Tool Enablement</h2>
+          <ul>
+            <li>Tools are attached per agent, not globally assumed.</li>
+            <li>Credential-backed tools require valid provider setup.</li>
+            <li>Tool packs can be imported to expand agent capability sets.</li>
+            <li>Operational checks should include permissions + credentials + assignment.</li>
+          </ul>
+        </article>
+
+        <article class="doc-card">
+          <h2>Knowledge Workflows</h2>
+          <ul>
+            <li>Supported file types: PDF, images, text.</li>
+            <li>Document processing must complete before reliable retrieval.</li>
+            <li>Comparison queries should reference both source documents explicitly.</li>
+          </ul>
+        </article>
+
+        <article class="doc-card">
+          <h2>Nearby Agents</h2>
+          <ul>
+            <li>Peer discovery, secure pairing, and remote agent bridging to dashboard.</li>
+            <li>Password-based secure connection flow.</li>
+            <li>Designed for local collaboration and handoff workflows.</li>
+          </ul>
+          <p class="callout"><strong>Premium Subscription:</strong> Required for Near By Kukku Agents.</p>
+        </article>
+
+        <article class="doc-card">
+          <h2>Nearby Bots (OpenClaw Compatible)</h2>
+          <ul>
+            <li>Local gateway discovery and approval flow via gateway token.</li>
+            <li>Remote bot-agent listing and add-to-dashboard bridging.</li>
+            <li>No special Wi-Fi SSID naming requirement.</li>
+          </ul>
+          <p class="callout"><strong>Premium Subscription:</strong> Required for Near By Kukku Bots. Operational requirement: bot gateway must be discoverable on local network and approved in the app flow before agent listing.</p>
+        </article>
+
+        <article class="doc-card">
+          <h2>Quick Agent Setup</h2>
+          <ul>
+            <li>Quick Agent Setup accelerates creation with guided defaults and tool recommendations.</li>
+            <li>Agent editing supports role/personality refinement and tool/routing updates.</li>
+            <li>Designed for broad device compatibility.</li>
+          </ul>
+        </article>
+
+        <article class="doc-card">
+          <h2>Team Agents</h2>
+          <ul>
+            <li>Team Agents support multi-agent orchestration for advanced workflows.</li>
+            <li>Recommended on high-memory devices for best performance consistency.</li>
+          </ul>
+        </article>
+
+        <article class="doc-card">
+          <h2>Output Experience</h2>
+          <ul>
+            <li>Kukku can render specialized result cards (for example health and stock views).</li>
+            <li>Structured output is surfaced in chat alongside natural language responses.</li>
+            <li>Raw protocol traces remain hidden in normal user mode.</li>
+          </ul>
+        </article>
+
+        <article class="doc-card">
+          <h2>Data and Safety</h2>
+          <ul>
+            <li>Core design prioritizes local processing and user-controlled integrations.</li>
+            <li>Backup/restore supports continuity while protecting secrets.</li>
+            <li>API credentials are redacted from portable backups.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Kukku Me.</p>
+    </footer>
+  </body>
+</html>

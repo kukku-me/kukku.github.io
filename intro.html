@@ -3,14 +3,205 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Kukku AI Solutions company introduction" />
-  <title>Kukku AI Solutions — Introduction</title>
+  <meta name="description" content="Kukku AI Solutions company profile" />
+  <title>Kukku AI Solutions - Company Profile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .profile-shell {
+      display: grid;
+      gap: 26px;
+    }
+
+    .cp-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .cp-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 24px 46px rgba(10, 11, 13, 0.1);
+      backdrop-filter: blur(4px);
+    }
+
+    .cp-hero .cp-card h1 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      line-height: 1.08;
+      margin-bottom: 16px;
+      max-width: 20ch;
+    }
+
+    .cp-lead {
+      font-size: 1.03rem;
+      line-height: 1.68;
+      color: rgba(10, 11, 13, 0.74);
+      max-width: 62ch;
+    }
+
+    .cp-tags {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cp-tags span {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 60, 68, 0.2);
+      background: rgba(198, 230, 242, 0.62);
+      color: var(--sea-dark);
+      padding: 8px 12px;
+    }
+
+    .cp-metrics {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .cp-metric {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .cp-metric strong {
+      display: block;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      color: var(--sea-dark);
+      line-height: 1.1;
+    }
+
+    .cp-metric span {
+      color: rgba(10, 11, 13, 0.66);
+      font-size: 0.95rem;
+    }
+
+    .cp-services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .cp-services article,
+    .cp-timeline article,
+    .cp-values article {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 16px 32px rgba(10, 11, 13, 0.08);
+    }
+
+    .cp-services h3,
+    .cp-timeline h3,
+    .cp-values h3 {
+      font-family: "Fraunces", serif;
+      margin-bottom: 8px;
+      font-size: 1.12rem;
+    }
+
+    .cp-services p,
+    .cp-timeline p,
+    .cp-values p {
+      line-height: 1.58;
+      color: rgba(10, 11, 13, 0.73);
+    }
+
+    .cp-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .cp-phase {
+      display: inline-flex;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sea-dark);
+      font-size: 0.74rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 60, 68, 0.2);
+      padding: 5px 10px;
+      background: rgba(240, 218, 193, 0.45);
+    }
+
+    .cp-values {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .cp-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background:
+        radial-gradient(circle at 0% 100%, rgba(199, 230, 242, 0.38), transparent 38%),
+        radial-gradient(circle at 100% 0%, rgba(246, 178, 107, 0.22), transparent 36%),
+        #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 16px 30px rgba(10, 11, 13, 0.08);
+    }
+
+    .cp-cta h3 {
+      font-family: "Fraunces", serif;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(18px) scale(0.99);
+      transition: opacity 620ms ease, transform 620ms ease;
+    }
+
+    [data-reveal].visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    @media (max-width: 980px) {
+      .cp-hero,
+      .cp-services,
+      .cp-timeline,
+      .cp-values {
+        grid-template-columns: 1fr;
+      }
+
+      .cp-cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="glow" aria-hidden="true"></div>
@@ -21,38 +212,175 @@
     </div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <div class="nav-item has-dropdown">
+        <a href="docs-user.html">Docs</a>
+        <div class="nav-dropdown">
+          <a href="docs-user.html">User Guide</a>
+          <a href="docs-platform.html">Platform Guide</a>
+          <a href="docs-tools.html">Tools Guide</a>
+        </div>
+      </div>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
     </nav>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="section-title">
-        <p class="eyebrow">Company</p>
+  <main class="profile-shell">
+    <section class="cp-hero">
+      <article class="cp-card" data-reveal>
+        <p class="eyebrow">Company Profile</p>
         <h1>Kukku AI Solutions</h1>
-        <p class="lede">We help organizations build practical AI capabilities across infrastructure, workflows, and product development.</p>
-      </div>
+        <p class="cp-lead">
+          We help organizations design and deploy practical AI systems across infrastructure, workflows, and product
+          development. Our focus is secure architecture, production reliability, and outcomes that teams can measure.
+        </p>
+        <div class="cp-tags">
+          <span>AI Infrastructure</span>
+          <span>Workflow Modernization</span>
+          <span>AI Product Development</span>
+        </div>
+      </article>
 
-      <div class="feature-grid">
-        <article>
-          <h3>1. AI Cloud Infrastructure Advisory and Consultation</h3>
-          <p>Architecture guidance for AI-ready cloud foundations, cost-aware scaling, model serving, and secure enterprise deployment patterns.</p>
+      <aside class="cp-metrics">
+        <article class="cp-metric" data-reveal data-delay="60">
+          <strong class="cp-count" data-count="12" data-suffix="+">0</strong>
+          <span>AI workflow patterns delivered</span>
         </article>
-        <article>
-          <h3>2. Modernization and Migration with AI Workflows</h3>
-          <p>Upgrade legacy systems and migrate processes into modern AI-assisted workflows with measurable productivity and quality gains.</p>
+        <article class="cp-metric" data-reveal data-delay="120">
+          <strong class="cp-count" data-count="99" data-suffix="%">0</strong>
+          <span>Privacy-first processing orientation</span>
         </article>
-        <article>
-          <h3>3. AI Application Development (Kukku Me App)</h3>
-          <p>End-to-end AI application design and engineering, including our flagship product <strong>Kukku Me</strong> for private, agentic experiences.</p>
+        <article class="cp-metric" data-reveal data-delay="180">
+          <strong class="cp-count" data-count="3" data-suffix="x">0</strong>
+          <span>Faster pilot-to-production execution</span>
         </article>
+      </aside>
+    </section>
+
+    <section id="services" class="cp-services">
+      <article data-reveal data-delay="50">
+        <h3>AI-Focused Product Development</h3>
+        <p>Kukku Me is an AI product for edge deployments on mobile and desktop platforms, designed for private, agentic user experiences.</p>
+      </article>
+      <article data-reveal data-delay="110">
+        <h3>AI Cloud Infrastructure Advisory</h3>
+        <p>Architecture guidance for secure model serving, cost-aware scaling, and enterprise-ready deployment patterns.</p>
+      </article>
+      <article data-reveal data-delay="170">
+        <h3>Modernization with AI Workflows</h3>
+        <p>Transform legacy processes into AI-assisted operations with practical automation and governance controls.</p>
+      </article>
+    </section>
+
+    <section id="approach" class="cp-timeline">
+      <article data-reveal data-delay="60">
+        <span class="cp-phase">Strategy</span>
+        <h3>Assess and Design</h3>
+        <p>Map current systems, identify high-value AI opportunities, and define a realistic implementation architecture.</p>
+      </article>
+      <article data-reveal data-delay="120">
+        <span class="cp-phase">Pilot Delivery</span>
+        <h3>Pilot and Validate</h3>
+        <p>Launch focused pilots with clear quality, security, and adoption metrics before broader rollout.</p>
+      </article>
+      <article data-reveal data-delay="180">
+        <span class="cp-phase">Scale Operations</span>
+        <h3>Scale and Govern</h3>
+        <p>Industrialize pipelines with monitoring, model lifecycle controls, and operating playbooks for teams.</p>
+      </article>
+    </section>
+
+    <section class="cp-values">
+      <article data-reveal data-delay="70">
+        <h3>Trust by Design</h3>
+        <p>Security, privacy, and model accountability are built into architecture decisions from day one.</p>
+      </article>
+      <article data-reveal data-delay="130">
+        <h3>Execution over Slides</h3>
+        <p>We prioritize implementation and measurable impact instead of abstract recommendations.</p>
+      </article>
+      <article data-reveal data-delay="190">
+        <h3>Engineering Partnership</h3>
+        <p>We work directly with your teams to transfer capability and establish long-term delivery discipline.</p>
+      </article>
+    </section>
+
+    <section class="cp-cta" data-reveal data-delay="90">
+      <div>
+        <p class="eyebrow">Work With Us</p>
+        <h3>Planning an AI initiative this quarter?</h3>
+        <p class="cp-lead">Let's scope a focused pilot and define a production path your team can execute confidently.</p>
       </div>
+      <a class="button" href="mailto:support@kukku.me">Contact Kukku AI Solutions</a>
     </section>
   </main>
 
   <footer>
     <p>© 2026 Kukku AI Solutions. · <a href="index.html">Back to Home</a></p>
   </footer>
+
+  <script>
+    const elements = document.querySelectorAll("[data-reveal]");
+    const counters = document.querySelectorAll(".cp-count[data-count]");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const setVisible = (el) => {
+      const delay = Number(el.dataset.delay || "0");
+      if (delay) {
+        el.style.transitionDelay = `${delay}ms`;
+      }
+      el.classList.add("visible");
+    };
+
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(entry.target);
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
+
+      elements.forEach((el) => revealObserver.observe(el));
+    } else {
+      elements.forEach((el) => setVisible(el));
+    }
+
+    const animateCounter = (el) => {
+      const target = Number(el.dataset.count || "0");
+      const suffix = el.dataset.suffix || "";
+      const duration = 1050;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = `${Math.round(target * eased)}${suffix}`;
+        if (t < 1) requestAnimationFrame(tick);
+      };
+
+      requestAnimationFrame(tick);
+    };
+
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            countObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.55 });
+
+      counters.forEach((counter) => countObserver.observe(counter));
+    } else {
+      counters.forEach((counter) => {
+        counter.textContent = `${counter.dataset.count || "0"}${counter.dataset.suffix || ""}`;
+      });
+    }
+  </script>
 </body>
 </html>

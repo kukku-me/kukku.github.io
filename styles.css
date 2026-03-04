@@ -77,11 +77,64 @@ body {
   display: flex;
   gap: 18px;
   font-size: 0.95rem;
+  align-items: center;
 }
 
 .nav a {
   text-decoration: none;
   color: var(--ink);
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-item.has-dropdown > a::after {
+  content: "▾";
+  font-size: 0.72rem;
+  opacity: 0.7;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 16px 36px rgba(10, 11, 13, 0.16);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 5;
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.nav-dropdown a:hover {
+  background: rgba(31, 111, 120, 0.1);
+}
+
+.nav-item.has-dropdown:hover .nav-dropdown,
+.nav-item.has-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 main {
@@ -490,6 +543,11 @@ footer {
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .nav-dropdown {
+    right: auto;
+    left: 0;
   }
 
   .metrics {

@@ -18,6 +18,14 @@
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="intro.html">Company</a>
+        <div class="nav-item has-dropdown">
+          <a href="docs-user.html">Docs</a>
+          <div class="nav-dropdown">
+            <a href="docs-user.html">User Guide</a>
+            <a href="docs-platform.html">Platform Guide</a>
+            <a href="docs-tools.html">Tools Guide</a>
+          </div>
+        </div>
         <a href="support.html">Support</a>
       </nav>
     </header>
@@ -41,20 +49,20 @@
           <p>By default, core AI inference is performed locally on your device.</p>
 
           <h2>4. When Data May Leave Device</h2>
-          <p>If you enable tools or modes that use external services (for example web search or third-party API tools), relevant query data is sent to those providers to return results.</p>
+          <p>If you enable tools or modes that use external services, relevant query data is sent to those providers to return results. Examples include web search providers, weather providers (Apple WeatherKit with Open-Meteo fallback), and third-party API tools you configure.</p>
 
           <h2>5. Permissions</h2>
-          <p>Depending on features you use, Kukku may request access to camera, microphone/speech recognition, photos, contacts, calendars/reminders, health data, location, and local network discovery.</p>
+          <p>Depending on features you use, Kukku may request access to camera, microphone/speech recognition, photos, contacts, calendars/reminders, health data (HealthKit), location (for weather and geocoding), and local network discovery.</p>
 
           <h2>6. Backups</h2>
           <p>Backup files may include app settings and agent/tool setup. API keys are redacted from backups and must be re-entered after restore.</p>
 
           <h2>7. Data Sharing</h2>
-          <p>We do not sell personal data. Data is only shared with service providers you explicitly configure through enabled tools/features.</p>
+          <p>We do not sell personal data. Data is only shared with external providers required for enabled features, such as Apple WeatherKit/Open-Meteo for weather and providers you configure for optional tools.</p>
 
-          <h2>8. Subscription and Monetization Analytics</h2>
-          <p>Kukku may generate subscription and paywall telemetry events to understand onboarding and subscription performance. These events are designed to be privacy-safe and do not include personal content such as prompt text, emails, phone numbers, contacts, or message text.</p>
-          <p>Data may include anonymous install/session identifiers, app version/build metadata, paywall and subscription event outcomes, product identifiers, optional country/currency metadata, and sanitized error codes/messages. This telemetry is used only for analytics and entitlement reliability, not cross-app tracking.</p>
+          <h2>8. Subscription and Monetization Events</h2>
+          <p>Kukku generates subscription and paywall event logs to support onboarding diagnostics and entitlement reliability. These events are designed to avoid personal content such as prompt text, email body text, phone numbers, contacts, or message text.</p>
+          <p>Event fields may include install/session identifiers stored on your device, app version/build metadata, paywall and subscription outcomes, product identifiers, optional country/currency metadata, and sanitized error codes/messages. In this app version, these events are processed locally on-device and are not used for cross-app tracking.</p>
 
           <h2>9. Data Retention and Deletion</h2>
           <p>Most app data is stored locally on your device. You can delete content in-app or uninstall the app to remove local app data, subject to your device backup settings.</p>
