@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Kukku Platform Guide" />
-    <title>Kukku Docs - Platform Guide</title>
+    <meta name="description" content="Personal AI Kukku Me Platform Guide" />
+    <title>Personal AI Kukku Me Docs - Platform Guide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -23,7 +23,8 @@
       }
       .docs-hero h1 {
         font-family: "Fraunces", serif;
-        font-size: clamp(2rem, 4.1vw, 3.2rem);
+        font-size: clamp(1.7rem, 3vw, 2.35rem);
+        line-height: 1.18;
         margin-bottom: 12px;
       }
       .docs-tabs {
@@ -31,6 +32,12 @@
         gap: 10px;
         flex-wrap: wrap;
         margin-top: 18px;
+      }
+      .docs-product {
+        font-size: 0.84rem;
+        color: rgba(10, 11, 13, 0.62);
+        margin-top: 4px;
+        margin-bottom: 8px;
       }
       .docs-tab {
         text-decoration: none;
@@ -48,35 +55,39 @@
       }
       .doc-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 14px;
+        gap: 24px;
       }
       .doc-card {
         background: #fff;
         border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 20px;
+        border-radius: 20px;
+        padding: 22px;
         box-shadow: 0 14px 28px rgba(10, 11, 13, 0.08);
       }
       .doc-card h2 {
         font-family: "Fraunces", serif;
-        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      .doc-card h3 {
+        margin-top: 16px;
         margin-bottom: 8px;
+        font-size: 1.05rem;
       }
       .doc-card p, .doc-card li {
         line-height: 1.6;
         color: rgba(10, 11, 13, 0.78);
       }
-      .doc-card ul {
+      .doc-card ul,
+      .doc-card ol {
         padding-left: 18px;
         display: grid;
         gap: 6px;
       }
-      .callout {
+      .note {
         border-left: 3px solid var(--sea);
-        background: rgba(199, 230, 242, 0.32);
-        border-radius: 10px;
         padding: 10px 12px;
+        background: rgba(199, 230, 242, 0.3);
+        border-radius: 10px;
         margin-top: 10px;
       }
     </style>
@@ -94,9 +105,11 @@
         <div class="nav-item has-dropdown">
           <a href="docs-user.html">Docs</a>
           <div class="nav-dropdown">
+            <span class="nav-subtitle">Personal AI Kukku Me</span>
             <a href="docs-user.html">User Guide</a>
             <a href="docs-platform.html">Platform Guide</a>
             <a href="docs-tools.html">Tools Guide</a>
+            <a href="docs-release.html">Release Roadmap</a>
           </div>
         </div>
         <a href="privacy.html">Privacy</a>
@@ -107,12 +120,14 @@
     <main class="docs-wrap">
       <section class="docs-hero">
         <p class="eyebrow">Documentation</p>
-        <h1>Kukku Platform Guide</h1>
+        <h1>Personal AI Kukku Me Platform Guide</h1>
         <p class="lede">Public technical guide for teams using Kukku as an on-device AI platform, with practical operational details and no sensitive implementation internals.</p>
+        <p class="docs-product">Personal AI Kukku Me App Docs</p>
         <div class="docs-tabs">
           <a class="docs-tab" href="docs-user.html">User Guide</a>
           <a class="docs-tab active" href="docs-platform.html">Platform Guide</a>
           <a class="docs-tab" href="docs-tools.html">Tools Guide</a>
+          <a class="docs-tab" href="docs-release.html">Release Roadmap</a>
         </div>
       </section>
 
@@ -120,7 +135,7 @@
         <article class="doc-card">
           <h2>Platform Model</h2>
           <ul>
-            <li>Available on <strong>iOS</strong> and <strong>macOS</strong>.</li>
+            <li>Available on <strong>iOS</strong> and <strong>macOS (awaiting Apple App Review)</strong>.</li>
             <li>Agent-first architecture for specialized workflows.</li>
             <li>On-device-first processing with optional external tools.</li>
             <li>Modular capabilities: tools, documents, nearby collaboration, profile and backup.</li>
@@ -135,7 +150,7 @@
             <li>Optional deterministic workflow sequencing per agent.</li>
             <li>Keyword-guided tool selection with rule-based safeguards.</li>
           </ul>
-          <p class="callout"><strong>Premium Subscription:</strong> Required for Analyzer mode and all tool orchestration.</p>
+          <p class="note"><strong>Premium Subscription:</strong> Required for Analyzer mode and all tool orchestration.</p>
         </article>
 
         <article class="doc-card">
@@ -146,8 +161,8 @@
             <li>On lower-memory devices, use the default low-memory model profile.</li>
             <li>Selecting oversized models on low-memory devices can cause unpredictable responses and app instability, including possible crashes due to memory pressure.</li>
           </ul>
-          <p class="callout"><strong>Output synthesis controls:</strong> Advanced settings (temperature, top-p, repetition controls, output token limits) directly affect response style and length. For practical tuning steps, see <a href="docs-user.html">User Guide</a> and <a href="docs-tools.html">Tools Guide</a>.</p>
-          <p class="callout"><strong>Recommendation:</strong> Keep the default low model selection on lower-memory devices unless you have validated stability for your workload.</p>
+          <p class="note"><strong>Output synthesis controls:</strong> Advanced settings (temperature, top-p, repetition controls, output token limits) directly affect response style and length. For practical tuning steps, see <a href="docs-user.html">User Guide</a> and <a href="docs-tools.html">Tools Guide</a>.</p>
+          <p class="note"><strong>Recommendation:</strong> Keep the default low model selection on lower-memory devices unless you have validated stability for your workload.</p>
         </article>
 
         <article class="doc-card">
@@ -176,7 +191,7 @@
             <li>Password-based secure connection flow.</li>
             <li>Designed for local collaboration and handoff workflows.</li>
           </ul>
-          <p class="callout"><strong>Premium Subscription:</strong> Required for Near By Kukku Agents.</p>
+          <p class="note"><strong>Premium Subscription:</strong> Required for Near By Kukku Agents.</p>
         </article>
 
         <article class="doc-card">
@@ -186,7 +201,7 @@
             <li>Remote bot-agent listing and add-to-dashboard bridging.</li>
             <li>No special Wi-Fi SSID naming requirement.</li>
           </ul>
-          <p class="callout"><strong>Premium Subscription:</strong> Required for Near By Kukku Bots. Operational requirement: bot gateway must be discoverable on local network and approved in the app flow before agent listing.</p>
+          <p class="note"><strong>Premium Subscription:</strong> Required for Near By Kukku Bots. Operational requirement: bot gateway must be discoverable on local network and approved in the app flow before agent listing.</p>
         </article>
 
         <article class="doc-card">
