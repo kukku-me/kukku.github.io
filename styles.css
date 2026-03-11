@@ -126,6 +126,15 @@ body {
   font-size: 0.9rem;
 }
 
+.nav-dropdown .nav-subtitle {
+  display: block;
+  padding: 8px 12px 6px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(10, 11, 13, 0.56);
+}
+
 .nav-dropdown a:hover {
   background: rgba(31, 111, 120, 0.1);
 }

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Personal AI Kukku Me Monthly and Quarterly Release Enhancements Roadmap" />
+    <title>Personal AI Kukku Me Docs - Release Roadmap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .docs-wrap {
+        display: grid;
+        gap: 24px;
+      }
+      .docs-hero {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 20px 44px rgba(10, 11, 13, 0.1);
+      }
+      .docs-hero h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(1.7rem, 3vw, 2.35rem);
+        line-height: 1.18;
+        margin-bottom: 12px;
+      }
+      .docs-tabs {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .docs-product {
+        font-size: 0.84rem;
+        color: rgba(10, 11, 13, 0.62);
+        margin-top: 4px;
+        margin-bottom: 8px;
+      }
+      .docs-tab {
+        text-decoration: none;
+        border: 1px solid var(--line);
+        padding: 8px 14px;
+        border-radius: 999px;
+        color: var(--ink);
+        background: #fff;
+        font-size: 0.9rem;
+      }
+      .docs-tab.active {
+        background: var(--sea);
+        color: #fff;
+        border-color: transparent;
+      }
+      .doc-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: 0 14px 28px rgba(10, 11, 13, 0.08);
+      }
+      .doc-card h2 {
+        font-family: "Fraunces", serif;
+        margin-bottom: 10px;
+      }
+      .doc-card p,
+      .doc-card li {
+        line-height: 1.6;
+        color: rgba(10, 11, 13, 0.78);
+      }
+      .doc-card ul,
+      .doc-card ol {
+        padding-left: 18px;
+        display: grid;
+        gap: 6px;
+      }
+      .release-index a {
+        color: var(--sea-dark);
+        text-decoration: none;
+        border-bottom: 1px dashed rgba(11, 60, 68, 0.35);
+      }
+      .release-section {
+        scroll-margin-top: 90px;
+      }
+      .note {
+        border-left: 3px solid var(--sea);
+        padding: 10px 12px;
+        background: rgba(199, 230, 242, 0.3);
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="brand">
+        <img class="brand-icon" src="KukkuIcon.png" alt="Kukku" />
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="intro.html">Company</a>
+        <div class="nav-item has-dropdown">
+          <a href="docs-user.html">Docs</a>
+          <div class="nav-dropdown">
+            <span class="nav-subtitle">Personal AI Kukku Me</span>
+            <a href="docs-user.html">User Guide</a>
+            <a href="docs-platform.html">Platform Guide</a>
+            <a href="docs-tools.html">Tools Guide</a>
+            <a href="docs-release.html">Release Roadmap</a>
+          </div>
+        </div>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </header>
+
+    <main class="docs-wrap">
+      <section class="docs-hero">
+        <p class="eyebrow">Documentation</p>
+        <h1>Personal AI Kukku Me Release Roadmap</h1>
+        <p class="lede">Track monthly and quarterly product enhancements in one place for planning, communication, and release visibility.</p>
+        <p class="docs-product">Personal AI Kukku Me App Docs</p>
+        <div class="docs-tabs">
+          <a class="docs-tab" href="docs-user.html">User Guide</a>
+          <a class="docs-tab" href="docs-platform.html">Platform Guide</a>
+          <a class="docs-tab" href="docs-tools.html">Tools Guide</a>
+          <a class="docs-tab active" href="docs-release.html">Release Roadmap</a>
+        </div>
+      </section>
+
+      <section class="doc-card">
+        <h2>Release Index</h2>
+        <ol class="release-index">
+          <li><a href="#release-2026-03">March 2026</a></li>
+        </ol>
+        <p class="note"><strong>Usage:</strong> Add a new month or quarter as a new section on this page to maintain a chronological roadmap history.</p>
+      </section>
+
+      <section class="doc-card release-section" id="release-2026-03">
+        <h2>Enhancements Roadmap (March 2026) - Doc Release v1.0 (Build 8)</h2>
+        <p class="note"><strong>Release status:</strong> iOS approved. macOS is pending Apple App Review.</p>
+        <ol>
+          <li><strong>Regional Model Expansion:</strong> Add new region-optimized AI models to improve response quality for local language usage, context, and cultural relevance while keeping privacy and on-device-first behavior aligned with Kukku Me standards.</li>
+          <li><strong>Food Calorie Estimator Tool:</strong> Introduce a new tool that estimates calories from user food input (text and image-assisted workflows where available). Users can attach this tool to any agent, including creating a dedicated Food Calorie Estimator agent.</li>
+        </ol>
+        <p class="note"><strong>Disclaimer:</strong> This roadmap is for planning visibility only and may change based on testing, quality validation, platform constraints, and user feedback. Features listed are not guaranteed for a specific release date and may be modified, delayed, or reprioritized. Food calorie estimates are informational only and are not medical advice; consult qualified professionals for clinical or dietary decisions.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Kukku Me.</p>
+    </footer>
+  </body>
+</html>
