@@ -536,6 +536,38 @@ main {
   min-width: 240px;
 }
 
+.contact-card .button,
+.contact-card .ghost {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.contact-card .ghost {
+  margin-left: 10px;
+}
+
+.store-cta,
+.store-cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.store-cta svg,
+.store-cta-ghost svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.store-cta svg {
+  fill: #fff;
+}
+
+.store-cta-ghost svg {
+  fill: var(--ink);
+}
+
 footer {
   margin-top: 64px;
   text-align: center;
