@@ -47,21 +47,31 @@ body {
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid var(--line);
-  padding: 12px 20px;
+  padding: 12px 20px 12px 10px;
   border-radius: 999px;
   backdrop-filter: blur(10px);
 }
 
 .brand {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
   font-family: "Fraunces", serif;
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: 0.02em;
+  min-width: 0;
+}
+
+.brand a {
+  display: inline-flex;
+  align-items: center;
 }
 
 .brand-icon {
-  width: 60px;
-  height: 60px;
+  width: clamp(185px, 21vw, 270px);
+  height: auto;
+  max-height: 62px;
   display: block;
   border-radius: 0;
   object-fit: contain;
@@ -553,11 +563,45 @@ main {
   gap: 8px;
 }
 
+.app-store-badge {
+  background: #000;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(10, 11, 13, 0.2);
+}
+
+.app-store-badge .badge-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.app-store-badge .badge-top {
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.app-store-badge .badge-bottom {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .store-cta svg,
 .store-cta-ghost svg {
   width: 16px;
   height: 16px;
   display: block;
+}
+
+.app-store-badge svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  fill: #fff;
 }
 
 .store-cta svg {
@@ -581,9 +625,19 @@ footer {
     gap: 8px;
   }
 
+  .brand {
+    justify-content: center;
+    width: 100%;
+  }
+
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .brand-icon {
+    width: min(220px, 70vw);
+    max-height: none;
   }
 
   .nav-dropdown {

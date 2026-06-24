@@ -1,389 +1,354 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Kukku AI Solutions company profile" />
-  <title>Kukku AI Solutions - Company Profile</title>
+  <meta name="description" content="Kukku — your Personal AI" />
+  <title>Kukku — On-device AI Companion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .profile-shell {
-      display: grid;
-      gap: 26px;
-    }
-
-    .cp-hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .cp-card {
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: 0 24px 46px rgba(10, 11, 13, 0.1);
-      backdrop-filter: blur(4px);
-    }
-
-    .cp-hero .cp-card h1 {
-      font-family: "Fraunces", serif;
-      font-size: clamp(2rem, 4.2vw, 3.4rem);
-      line-height: 1.08;
-      margin-bottom: 16px;
-      max-width: 20ch;
-    }
-
-    .cp-lead {
-      font-size: 1.03rem;
-      line-height: 1.68;
-      color: rgba(10, 11, 13, 0.74);
-      max-width: 62ch;
-    }
-
-    .cp-tags {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .cp-tags span {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border-radius: 999px;
-      border: 1px solid rgba(11, 60, 68, 0.2);
-      background: rgba(198, 230, 242, 0.62);
-      color: var(--sea-dark);
-      padding: 8px 12px;
-    }
-
-    .cp-metrics {
-      display: grid;
-      gap: 12px;
-      align-content: start;
-    }
-
-    .cp-metric {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px 18px;
-    }
-
-    .cp-metric strong {
-      display: block;
-      font-family: "Fraunces", serif;
-      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-      color: var(--sea-dark);
-      line-height: 1.1;
-    }
-
-    .cp-metric span {
-      color: rgba(10, 11, 13, 0.66);
-      font-size: 0.95rem;
-    }
-
-    .cp-services {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .cp-services article,
-    .cp-timeline article,
-    .cp-values article {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 16px 32px rgba(10, 11, 13, 0.08);
-    }
-
-    .cp-services h3,
-    .cp-timeline h3,
-    .cp-values h3 {
-      font-family: "Fraunces", serif;
-      margin-bottom: 8px;
-      font-size: 1.12rem;
-    }
-
-    .cp-services p,
-    .cp-timeline p,
-    .cp-values p {
-      line-height: 1.58;
-      color: rgba(10, 11, 13, 0.73);
-    }
-
-    .cp-timeline {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .cp-phase {
-      display: inline-flex;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--sea-dark);
-      font-size: 0.74rem;
-      border-radius: 999px;
-      border: 1px solid rgba(11, 60, 68, 0.2);
-      padding: 5px 10px;
-      background: rgba(240, 218, 193, 0.45);
-    }
-
-    .cp-values {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .cp-cta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      background:
-        radial-gradient(circle at 0% 100%, rgba(199, 230, 242, 0.38), transparent 38%),
-        radial-gradient(circle at 100% 0%, rgba(246, 178, 107, 0.22), transparent 36%),
-        #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 16px 30px rgba(10, 11, 13, 0.08);
-    }
-
-    .cp-cta h3 {
-      font-family: "Fraunces", serif;
-      font-size: 1.5rem;
-      margin-bottom: 6px;
-    }
-
-    [data-reveal] {
-      opacity: 0;
-      transform: translateY(18px) scale(0.99);
-      transition: opacity 620ms ease, transform 620ms ease;
-    }
-
-    [data-reveal].visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    @media (max-width: 980px) {
-      .cp-hero,
-      .cp-services,
-      .cp-timeline,
-      .cp-values {
-        grid-template-columns: 1fr;
-      }
-
-      .cp-cta {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      [data-reveal] {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
 </head>
+
 <body>
   <div class="glow" aria-hidden="true"></div>
 
   <header class="nav">
     <div class="brand">
-      <img class="brand-icon" src="KukkuIcon.png" alt="Kukku" />
+      <a href="index.html" aria-label="Kukku home">
+        <img class="brand-icon" src="KukkuIcon.png" alt="Kukku" />
+      </a>
     </div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="#services">Services</a>
-      <a href="#approach">Approach</a>
-      <div class="nav-item has-dropdown">
-        <a href="docs-user.html">Docs</a>
-        <div class="nav-dropdown">
-          <span class="nav-subtitle">Personal AI Kukku Me</span>
-          <a href="docs-user.html">User Guide</a>
-          <a href="docs-platform.html">Platform Guide</a>
-          <a href="docs-tools.html">Tools Guide</a>
-          <a href="docs-release.html">Release Roadmap</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+        <div class="nav-item has-dropdown">
+          <a href="docs-user.html">Docs</a>
+          <div class="nav-dropdown">
+            <span class="nav-subtitle">Personal AI Kukku Me</span>
+            <a href="docs-user.html">User Guide</a>
+            <a href="docs-platform.html">Platform Guide</a>
+            <a href="docs-tools.html">Tools Guide</a>
+            <a href="docs-release.html">Release Roadmap</a>
+          </div>
         </div>
-      </div>
       <a href="blog/">Blog</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main class="profile-shell">
-    <section class="cp-hero">
-      <article class="cp-card" data-reveal>
-        <p class="eyebrow">Company Profile</p>
-        <h1>Kukku AI Solutions</h1>
-        <p class="cp-lead">
-          We help organizations design and deploy practical AI systems across infrastructure, workflows, and product
-          development. Our focus is secure architecture, production reliability, and outcomes that teams can measure.
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">On-device. Private. Agentic</p>
+        <h1 class="rounded-title">Meet Kukku, your Personal AI for everyday use.</h1>
+        <p class="lede">
+          Kukku blends local AI, thoughtful tools, and a simple interface so you can reason, act, and do things —
+          without sending your data to the cloud.
         </p>
-        <div class="cp-tags">
-          <span>AI Infrastructure</span>
-          <span>Workflow Modernization</span>
-          <span>AI Product Development</span>
+        <div class="cta-row">
+          <a class="app-store-badge store-cta" href="https://apps.apple.com/sg/app/kukku-personal-ai/id6759591151" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M16.7 12.6c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.8-1.4-.2-2.7.8-3.4.8-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.8-.4 7 1.1 9.2.7 1.1 1.6 2.4 2.8 2.3 1.1 0 1.6-.7 3-.7 1.4 0 1.8.7 3 .7 1.2 0 2-1.1 2.7-2.2.8-1.3 1.2-2.6 1.2-2.7 0 0-2.3-.9-2.4-3.7Zm-2.9-6.8c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.7-1.1 1.7-1 2.6 1 0 2-.5 2.7-1.2Z" />
+            </svg>
+            <span class="badge-copy">
+              <span class="badge-top">Download on the</span>
+              <span class="badge-bottom">App Store</span>
+            </span>
+          </a>
+          <a class="ghost" href="#features">See features</a>
         </div>
-      </article>
-
-      <aside class="cp-metrics">
-        <article class="cp-metric" data-reveal data-delay="60">
-          <strong class="cp-count" data-count="12" data-suffix="+">0</strong>
-          <span>AI workflow patterns delivered</span>
-        </article>
-        <article class="cp-metric" data-reveal data-delay="120">
-          <strong class="cp-count" data-count="99" data-suffix="%">0</strong>
-          <span>Privacy-first processing orientation</span>
-        </article>
-        <article class="cp-metric" data-reveal data-delay="180">
-          <strong class="cp-count" data-count="3" data-suffix="x">0</strong>
-          <span>Faster pilot-to-production execution</span>
-        </article>
-      </aside>
-    </section>
-
-    <section id="services" class="cp-services">
-      <article data-reveal data-delay="50">
-        <h3>AI-Focused Product Development</h3>
-        <p>Kukku Me is an AI product for edge deployments on mobile and desktop platforms, designed for private, agentic user experiences.</p>
-      </article>
-      <article data-reveal data-delay="110">
-        <h3>AI Cloud Infrastructure Advisory</h3>
-        <p>Architecture guidance for secure model serving, cost-aware scaling, and enterprise-ready deployment patterns.</p>
-      </article>
-      <article data-reveal data-delay="170">
-        <h3>Modernization with AI Workflows</h3>
-        <p>Transform legacy processes into AI-assisted operations with practical automation and governance controls.</p>
-      </article>
-    </section>
-
-    <section id="approach" class="cp-timeline">
-      <article data-reveal data-delay="60">
-        <span class="cp-phase">Strategy</span>
-        <h3>Assess and Design</h3>
-        <p>Map current systems, identify high-value AI opportunities, and define a realistic implementation architecture.</p>
-      </article>
-      <article data-reveal data-delay="120">
-        <span class="cp-phase">Pilot Delivery</span>
-        <h3>Pilot and Validate</h3>
-        <p>Launch focused pilots with clear quality, security, and adoption metrics before broader rollout.</p>
-      </article>
-      <article data-reveal data-delay="180">
-        <span class="cp-phase">Scale Operations</span>
-        <h3>Scale and Govern</h3>
-        <p>Industrialize pipelines with monitoring, model lifecycle controls, and operating playbooks for teams.</p>
-      </article>
-    </section>
-
-    <section class="cp-values">
-      <article data-reveal data-delay="70">
-        <h3>Trust by Design</h3>
-        <p>Security, privacy, and model accountability are built into architecture decisions from day one.</p>
-      </article>
-      <article data-reveal data-delay="130">
-        <h3>Execution over Slides</h3>
-        <p>We prioritize implementation and measurable impact instead of abstract recommendations.</p>
-      </article>
-      <article data-reveal data-delay="190">
-        <h3>Engineering Partnership</h3>
-        <p>We work directly with your teams to transfer capability and establish long-term delivery discipline.</p>
-      </article>
-    </section>
-
-    <section class="cp-cta" data-reveal data-delay="90">
-      <div>
-        <p class="eyebrow">Work With Us</p>
-        <h3>Planning an AI initiative this quarter?</h3>
-        <p class="cp-lead">Let's scope a focused pilot and define a production path your team can execute confidently.</p>
+        <div class="meta">
+          <span>Kukku Personal AI (available for iOS)</span>
+          <span class="dot">•</span>
+          <span>macOS pending Apple App Review</span>
+        </div>
       </div>
-      <a class="button" href="mailto:support@kukku.me">Contact Kukku AI Solutions</a>
+
+      <div class="hero-card" aria-hidden="true">
+        <div class="card-header">
+          <div class="pill">Kukku App screenshots</div>
+          <div class="status">Local model</div>
+        </div>
+        <div class="card-body prototype">
+          <div class="magazine-carousel" aria-label="Kukku prototype screenshots">
+            <div class="magazine-track">
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Dashboard</h4>
+                  <p>Magazine style pick for your private and public agents.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-1.PNG" alt="Kukku app prototype screen 1" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Ask Agent</h4>
+                  <p>Ask questions to an expert agent with your own or suggested prompts.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-2.PNG" alt="Kukku app prototype screen 2" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Response Modes</h4>
+                  <p>Text based response</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-3.PNG" alt="Kukku app prototype screen 3" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Response Modes</h4>
+                  <p>Show response via your favorite cards</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-4.PNG" alt="Kukku app prototype screen 4" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Manage Your Personal AI with Ease from Actions</h4>
+                  <p>Attach tools and workflows to an agent.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-5.PNG" alt="Kukku app prototype screen 5" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Quick Agent Setup</h4>
+                  <p>Setup agents with a few clicks.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-6.0.PNG" alt="Kukku app prototype screen 6" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Privacy First</h4>
+                  <p>Data Access controls for local data flow.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-6.PNG" alt="Kukku app prototype screen 20" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Edit Agents</h4>
+                  <p>Edit agents with a few clicks.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-7.0.PNG" alt="Kukku app prototype screen 7" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Tools Assets</h4>
+                  <p>Attach tools and workflows to an agent.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-7.PNG" alt="Kukku app prototype screen 8" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Explore Nearby Kukku Agents</h4>
+                  <p>Discover and connect with other Kukku agents nearby.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-21.PNG" alt="Kukku app prototype screen 9" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Bots Bridge (OpenClaw Compatible)</h4>
+                  <p>Discover and connect with other Bots nearby.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-16.PNG" alt="Kukku app prototype screen 10" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>List your Bot Agents</h4>
+                  <p>Connect with other bots agents and get secure powerful AI.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-17.PNG" alt="Kukku app prototype screen 11" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Ask Bot Agent</h4>
+                  <p>Ask questions to a remote bot agent from same Interface.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-18.PNG" alt="Kukku app prototype screen 12" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Teams with other agents or remote bots</h4>
+                  <p>Create teams of Kukku local agents and remote bots agent.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-19.PNG" alt="Kukku app prototype screen 13" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Model Controls</h4>
+                  <p>Manage local model and performance setup.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="prototype-20.PNG" alt="Kukku app prototype screen 19" />
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="metrics">
+            <div>
+              <p>Privacy</p>
+              <h3>On-device</h3>
+            </div>
+            <div>
+              <p>Tools</p>
+              <h3>12+</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-title">
+        <p class="eyebrow">What you get</p>
+        <h2>Designed for quiet power.</h2>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <h3>Liquid tools</h3>
+          <p>Chain multiple actions in one prompt — search, summarize, schedule, and share without context switching.
+          </p>
+        </article>
+        <article>
+          <h3>Context aware chat</h3>
+          <p>Bring in documents, notes, and structured knowledge while keeping the interface minimal.</p>
+        </article>
+        <article>
+          <h3>Local-first privacy</h3>
+          <p>Inference runs on your device. Your data stays yours, with optional cloud sync later.</p>
+        </article>
+        <article>
+          <h3>Lightning fast UI</h3>
+          <p>Native SwiftUI layout with responsive design, optimized for Apple Silicon performance.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" class="section split">
+      <div>
+        <p class="eyebrow">How it works</p>
+        <h2>Thoughtful steps from prompt to action.</h2>
+        <p class="lede">
+          Kukku orchestrates tools behind the scenes — you describe the intent, Kukku handles the sequence.
+        </p>
+        <ul class="steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h4>Simple User Friendly Dashboard for your Agents </h4>
+              <p>Select from a pre-built agents or create your own on given topic with simple wizard.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h4>Ask Kukku Agents and make things happen privately</h4>
+              <p>Use natural language; Kukku interprets tasks and the right tool chain to invoke actions such as Messsages,reminder.</p>
+            </div>
+          </li>
+           <li>
+            <span>03</span>
+            <div>
+              <h4>Summaries Private Data</h4>
+              <p>Health Metrics Activity Card and personal images are summarized and presented in a private, secure
+                view.</p>
+            </div>
+          </li>
+          <li>
+            <span>04</span>
+            <div>
+              <h4>Talk to your private documents</h4>
+              <p>Summarize and Analyze your private documents</p>
+            </div>
+          </li>
+          <li>
+            <span>05</span>
+            <div>
+              <h4>Agentic Team and Collaboration</h4>
+              <p>Work with multiple AI agents in Team, each with distinct roles and capabilities.</p>
+            </div>
+          </li>
+          <li>
+            <span>06</span>
+            <div>
+              <h4>Connect with nearby Kukku Agents and Bots(OpenClaw-Compatible)</h4>
+              <p>Securely connect to Kukku Agents and Bots for seamless collaboration in Team or
+                gossip for fun</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="stats">
+        <div>
+          <h3>3X</h3>
+          <p>Faster capture to action</p>
+        </div>
+        <div>
+          <h3>99%</h3>
+          <p>Runs offline</p>
+        </div>
+        <div>
+          <h3>0</h3>
+          <p>Data brokers</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Talk to the Kukku team.</h2>
+        <p class="lede">For partnerships, product questions, or support, reach out directly by email.</p>
+      </div>
+      <div class="contact-card">
+        <p>Email us and we will get back to you.</p>
+        <a class="button" href="mailto:support@kukku.me">support@kukku.me</a>
+        <a class="ghost store-cta-ghost" href="https://apps.apple.com/sg/app/kukku-personal-ai/id6759591151" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M16.7 12.6c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.8-1.4-.2-2.7.8-3.4.8-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.8-.4 7 1.1 9.2.7 1.1 1.6 2.4 2.8 2.3 1.1 0 1.6-.7 3-.7 1.4 0 1.8.7 3 .7 1.2 0 2-1.1 2.7-2.2.8-1.3 1.2-2.6 1.2-2.7 0 0-2.3-.9-2.4-3.7Zm-2.9-6.8c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.7-1.1 1.7-1 2.6 1 0 2-.5 2.7-1.2Z" />
+          </svg>
+          <span>View on App Store</span>
+        </a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Kukku AI Solutions. · <a href="blog/">Blog</a> · <a href="index.html">Back to Home</a></p>
+    <p>© 2026 Kukku Me. · <a href="blog/">Blog</a> · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></p>
   </footer>
-
-  <script>
-    const elements = document.querySelectorAll("[data-reveal]");
-    const counters = document.querySelectorAll(".cp-count[data-count]");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const setVisible = (el) => {
-      const delay = Number(el.dataset.delay || "0");
-      if (delay) {
-        el.style.transitionDelay = `${delay}ms`;
-      }
-      el.classList.add("visible");
-    };
-
-    if (!reduceMotion && "IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(entry.target);
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
-
-      elements.forEach((el) => revealObserver.observe(el));
-    } else {
-      elements.forEach((el) => setVisible(el));
-    }
-
-    const animateCounter = (el) => {
-      const target = Number(el.dataset.count || "0");
-      const suffix = el.dataset.suffix || "";
-      const duration = 1050;
-      const start = performance.now();
-
-      const tick = (now) => {
-        const t = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = `${Math.round(target * eased)}${suffix}`;
-        if (t < 1) requestAnimationFrame(tick);
-      };
-
-      requestAnimationFrame(tick);
-    };
-
-    if (!reduceMotion && "IntersectionObserver" in window) {
-      const countObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            countObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.55 });
-
-      counters.forEach((counter) => countObserver.observe(counter));
-    } else {
-      counters.forEach((counter) => {
-        counter.textContent = `${counter.dataset.count || "0"}${counter.dataset.suffix || ""}`;
-      });
-    }
-  </script>
 </body>
+
 </html>
