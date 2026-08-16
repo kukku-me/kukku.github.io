@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Personal AI Kukku Me User Guide" />
+    <meta name="description" content="User guide for the Kukku personal AI app — agents, skills, tools, documents, nearby collaboration and settings." />
     <title>Personal AI Kukku Me Docs - User Guide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -87,7 +87,33 @@
         margin-top: 10px;
       }
     </style>
-  </head>
+  <!-- SEO:start -->
+  <link rel="canonical" href="https://kukku.me/docs-user.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1f6f78" />
+  <meta name="author" content="Kukku AI Solutions" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kukku AI Solutions" />
+  <meta property="og:title" content="Personal AI Kukku Me Docs - User Guide" />
+  <meta property="og:description" content="User guide for the Kukku personal AI app — agents, skills, tools, documents, nearby collaboration and settings." />
+  <meta property="og:url" content="https://kukku.me/docs-user.html" />
+  <meta property="og:image" content="https://kukku.me/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Personal AI Kukku Me Docs - User Guide" />
+  <meta name="twitter:description" content="User guide for the Kukku personal AI app — agents, skills, tools, documents, nearby collaboration and settings." />
+  <meta name="twitter:image" content="https://kukku.me/og-image.png" />
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <!-- SEO:end -->
+</head>
   <body>
     <div class="glow" aria-hidden="true"></div>
 
@@ -106,6 +132,7 @@
             <a href="docs-user.html">User Guide</a>
             <a href="docs-platform.html">Platform Guide</a>
             <a href="docs-tools.html">Tools Guide</a>
+            <a href="docs-skills.html">Skills Guide</a>
             <a href="docs-release.html">Release Roadmap</a>
           </div>
         </div>
@@ -116,16 +143,63 @@
 
     <main class="docs-wrap">
       <section class="docs-hero">
-        <p class="eyebrow">Documentation</p>
+        <p class="eyebrow">Documentation · Kukku 2.0</p>
         <h1>Personal AI Kukku Me User Guide</h1>
-        <p class="lede">Everything needed to set up Kukku, connect agents and bots, use tools, and work productively without deep technical setup.</p>
+        <p class="lede">Everything needed to set up Kukku, use the new Home Dashboard, work with seeded agents and skills, connect nearby agents and bots, and get more from your on-device AI — without deep technical setup.</p>
         <p class="docs-product">Personal AI Kukku Me App Docs</p>
         <div class="docs-tabs">
           <a class="docs-tab active" href="docs-user.html">User Guide</a>
           <a class="docs-tab" href="docs-platform.html">Platform Guide</a>
           <a class="docs-tab" href="docs-tools.html">Tools Guide</a>
+          <a class="docs-tab" href="docs-skills.html">Skills Guide</a>
           <a class="docs-tab" href="docs-release.html">Release Roadmap</a>
         </div>
+      </section>
+
+      <section class="doc-card">
+        <h2>What's New in Kukku 2.0</h2>
+        <ul>
+          <li><strong>Redesigned look &amp; feel:</strong> refreshed UI with new animations and emoji icons rendered with Metal shaders.</li>
+          <li><strong>New Home Dashboard:</strong> the Kukku Smart card, Reflection card, call-to-action agents and horizontal rails put your day and your agents right at hand.</li>
+          <li><strong>All Agents view:</strong> browse every agent in either grid or card layout.</li>
+          <li><strong>Four new seeded agents:</strong> Habits, Expenses, Food &amp; Nutrition (Nutrition Analyst) and Everyday Agent, plus an updated Health &amp; Fitness agent.</li>
+          <li><strong>Journals:</strong> a new per-agent feature with today, weekly and monthly views for habits, expenses, nutrition and health.</li>
+          <li><strong>Skills:</strong> Kukku native Habit Tracker and Expense Tracker skills, with support for additional skills that follow the <code>skills.md</code> standard. See the <a href="docs-skills.html">Skills Guide</a>.</li>
+          <li><strong>New local model:</strong> a Gemma 4 E2B model option on capable devices for stronger on-device results.</li>
+          <li><strong>Escalation &amp; remote models:</strong> connect an agent to a more powerful remote or OpenAI-compatible endpoint with your own API key — Kukku always asks first.</li>
+          <li><strong>Experimental MCP tools:</strong> early support for Model Context Protocol tools.</li>
+        </ul>
+      </section>
+
+      <section class="doc-card">
+        <h2>Your Home Dashboard</h2>
+        <p>The home screen is your day at a glance, reading across meals, habits, money and movement — all on-device.</p>
+        <h3>Kukku Smart card</h3>
+        <p>Reads across your activity, food, habits and spending and writes back a plain-English summary of how your day is really going.</p>
+        <h3>Reflection card</h3>
+        <p>An evening check-in that closes the loop and helps you wind down.</p>
+        <h3>CTA agents &amp; horizontal rails</h3>
+        <p>Quick call-to-action tiles and scrollable rails surface your most-used agents and next actions without hunting through menus.</p>
+        <h3>All Agents view</h3>
+        <p>Open the full dashboard to see every agent, switching between grid and card layouts to suit how you browse.</p>
+      </section>
+
+      <section class="doc-card">
+        <h2>Seeded Agents &amp; Journals</h2>
+        <p>Kukku 2.0 ships with ready-to-use agents so tracking and analytics work immediately. (For the separate Habit Tracker and Expense Tracker <em>skills</em>, see the <a href="docs-skills.html">Skills Guide</a>.)</p>
+        <ul>
+          <li><strong>Habits</strong> — streaks, completion and daily nudges.</li>
+          <li><strong>Expenses</strong> — budgets, categories, spending trends and receipt scanning.</li>
+          <li><strong>Food &amp; Nutrition (Nutrition Analyst)</strong> — calorie and macro estimates from a meal photo, with meal history.</li>
+          <li><strong>Health &amp; Fitness</strong> — steps, activity, heart rate and sleep from Apple Health.</li>
+          <li><strong>Everyday Agent</strong> — calendar events and quick everyday tasks.</li>
+          <li>Plus updated Image Analyzer and Knowledge Base agents.</li>
+        </ul>
+        <h3>Point your camera at real life</h3>
+        <p>Snap a receipt to log an expense, or snap a meal to estimate calories and macros — no forms, no typing.</p>
+        <h3>Journals</h3>
+        <p>As agents log data, each relevant agent builds Journals with today, weekly and monthly views for habits, expenses, nutrition and health — whichever window best suits the data. Journals are a built-in agent feature, and analytics happens internally.</p>
+        <p class="note"><strong>Disclaimer:</strong> Calorie, macro and health figures are estimates for personal awareness, not medical advice.</p>
       </section>
 
       <section class="doc-card">
@@ -148,6 +222,16 @@
           <li><strong>Direct mode:</strong> Direct responses only; tool flows are not available in this mode.</li>
         </ul>
         <p><strong>Subscription note:</strong> Tool usage requires Analyzer mode and Premium subscription. Basic mode uses Direct routing without tool flows.</p>
+        <h3>Local models</h3>
+        <p>Local AI is powered by community models optimized for Apple MLX. On capable, higher-memory devices you can select a <strong>Gemma 4 E2B</strong> model (effective 2B parameters, ~5.3B actual per Google) for stronger on-device results; lower-memory devices should keep the default low-memory profile for stability.</p>
+        <h3>Escalation and remote models</h3>
+        <ul>
+          <li><strong>Escalation mode</strong> lets an agent reach out to a more powerful model when a task needs it. Kukku always asks before routing your request off-device.</li>
+          <li>Connect an agent to a <strong>remote model</strong> or an <strong>OpenAI-compatible external endpoint</strong> by adding your own API key, base URL and model name.</li>
+          <li>Only the prompt and context for that request are sent to the provider you configured; local-first stays the default.</li>
+        </ul>
+        <h3>Enable MCP Client Tool</h3>
+        <p>MCP is off by default. In Model Setup, open <strong>Tooling Features</strong> and turn on <strong>Enable MCP Client Tool</strong>. Once enabled, an <strong>“MCP Client”</strong> tool type appears in Tools and can call configured MCP servers. For the full connection walkthrough, see <a href="#mcp-client-tool">Connect an MCP Server</a> below.</p>
         <h3>Advanced settings</h3>
         <p>Fine-tune quality/performance with temperature, top-p, repetition controls, and token limits.</p>
       </section>
@@ -182,6 +266,46 @@
         </ol>
         <p class="note"><strong>Important after Edit Tool:</strong> Ensure you add/remove that tool in each agent that uses it, then <strong>Save Agent</strong>, so the edited tool configuration takes effect in that specific agent. Recommended steps per affected agent: open <strong>Edit Agent</strong> → remove the tool → <strong>Save Agent</strong> → open <strong>Edit Agent</strong> again → add the same tool → <strong>Save Agent</strong>.</p>
         <p class="note">If a tool is not used during chat, check: agent assignment, permissions, credentials, and tool keywords.</p>
+      </section>
+
+      <section class="doc-card" id="mcp-client-tool">
+        <h2>Connect an MCP Server (MCP Client Tool)</h2>
+        <p>The MCP Client tool lets an agent call tools exposed by a Model Context Protocol (MCP) server. First enable it in <strong>Model Setup → Tooling Features → Enable MCP Client Tool</strong>, then add it like any other tool.</p>
+        <h3>Quick setup</h3>
+        <ol>
+          <li>Go to <strong>Actions → Tools</strong> and add a new tool of type <strong>MCP Client</strong>.</li>
+          <li>Fill the <strong>MCP Client Configuration</strong> fields (see below).</li>
+          <li>Save the tool, then assign it to an agent and <strong>Save Agent</strong>.</li>
+          <li>In Analyzer mode, ask the agent to use the capability; MCP tools are discovered from the server automatically.</li>
+        </ol>
+        <h3>Configuration fields</h3>
+        <ul>
+          <li><strong>MCP Name</strong> — a label for this connection, e.g. <em>My Tickets</em>.</li>
+          <li><strong>Server URL</strong> — the MCP server endpoint, e.g. <em>https://mcp.example.com/mcp</em>.</li>
+          <li><strong>Authentication</strong> — how credentials are sent: <em>Bearer token (recommended)</em>, <em>Header API key</em>, <em>Query API key</em>, or <em>None</em>.</li>
+          <li><strong>API Key / Token</strong> — your key, session key or token (shown for every mode except None).</li>
+          <li><strong>API Secret (optional)</strong> — a paired secret, shown for Header and Query modes when your server needs one.</li>
+          <li><strong>Header Name</strong> — the header the key is sent in (Header mode; default <em>x-api-key</em>).</li>
+          <li><strong>Query Key Name</strong> — the query parameter the key is sent in (Query mode; default <em>api_key</em>).</li>
+          <li><strong>Default MCP Tool (optional)</strong> — a specific tool name to call by default, e.g. <em>list_tickets</em>.</li>
+        </ul>
+        <h3>Advanced MCP Options</h3>
+        <ul>
+          <li><strong>Extra Headers JSON (optional)</strong> — additional headers as JSON, e.g. <em>{"X-Org":"acme"}</em>.</li>
+          <li><strong>Include Tools</strong> — comma-separated allowlist; only these server tools are exposed, e.g. <em>list_tickets,create_ticket</em>.</li>
+          <li><strong>Exclude Tools</strong> — comma-separated denylist to hide specific tools, e.g. <em>delete_ticket</em>.</li>
+          <li><strong>Read-only tools only</strong> — expose only non-destructive tools.</li>
+          <li><strong>Max tools exposed</strong> — cap the number of tools surfaced to the model (default 3, range 1–20).</li>
+          <li><strong>Discovery Mode</strong> — how eagerly tools are discovered: <em>Simple</em>, <em>Progressive</em>, or <em>Aggressive (recommended)</em>.</li>
+        </ul>
+        <h3>Connection examples</h3>
+        <ul>
+          <li><strong>Bearer token:</strong> Authentication = <em>Bearer token</em>, API Key / Token = your token. Sent as <em>Authorization: Bearer &lt;token&gt;</em>.</li>
+          <li><strong>Header API key:</strong> Authentication = <em>Header API key</em>, API Key / Token = your key, Header Name = <em>x-api-key</em> (or your server's header). Add API Secret only if required.</li>
+          <li><strong>Query API key:</strong> Authentication = <em>Query API key</em>, API Key / Token = your key, Query Key Name = <em>api_key</em> (or your server's parameter).</li>
+          <li><strong>Filtering:</strong> use Include / Exclude Tools and <em>Read-only tools only</em> to keep the agent focused and safe.</li>
+        </ul>
+        <p class="note"><strong>Experimental:</strong> MCP support is early and may change across releases. Quick setup needs only Name, Server URL, Authentication and API Key — use Advanced options only when your MCP server requires them. Credentials are stored on-device and redacted from backups.</p>
       </section>
 
       <section class="doc-card">
