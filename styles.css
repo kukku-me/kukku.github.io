@@ -975,3 +975,82 @@ footer {
   background: conic-gradient(from 210deg, #4285f4, #34a853, #fbbc05, #ea4335, #4285f4);
 }
 .gemma-badge .gemma-text strong { font-weight: 700; }
+
+/* Powered-by-Gemma proof band */
+.gemma-proof {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+.gemma-proof-media {
+  display: flex;
+  justify-content: center;
+}
+.gemma-proof-media img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  box-shadow: 0 26px 54px rgba(10, 11, 13, 0.18);
+}
+.gemma-proof-copy h2 {
+  margin: 14px 0 12px;
+}
+.gemma-proof-points {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.gemma-proof-points li {
+  position: relative;
+  padding-left: 26px;
+  line-height: 1.6;
+  color: rgba(10, 11, 13, 0.82);
+}
+.gemma-proof-points li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.55em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: conic-gradient(from 210deg, #4285f4, #34a853, #fbbc05, #ea4335, #4285f4);
+}
+@media (max-width: 820px) {
+  .gemma-proof {
+    grid-template-columns: 1fr;
+  }
+  .gemma-proof-media { order: -1; }
+}
+
+/* Clickable Gemma badge (hero → #gemma) */
+a.gemma-badge--link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+a.gemma-badge--link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(10, 11, 13, 0.12);
+  border-color: rgba(66, 133, 244, 0.5);
+}
+.gemma-badge-arrow {
+  font-weight: 700;
+  color: var(--sea-dark);
+  transition: transform 200ms ease;
+}
+a.gemma-badge--link:hover .gemma-badge-arrow {
+  transform: translateY(2px);
+}
+#gemma {
+  scroll-margin-top: 90px;
+}
+html {
+  scroll-behavior: smooth;
+}
