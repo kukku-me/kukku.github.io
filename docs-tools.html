@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Personal AI Kukku Me Tools Guide" />
+    <meta name="description" content="Tools guide for Kukku — the built-in and external tools that agents can call on-device." />
     <title>Personal AI Kukku Me Docs - Tools Guide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -111,7 +111,33 @@
         }
       }
     </style>
-  </head>
+  <!-- SEO:start -->
+  <link rel="canonical" href="https://kukku.me/docs-tools.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1f6f78" />
+  <meta name="author" content="Kukku AI Solutions" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kukku AI Solutions" />
+  <meta property="og:title" content="Personal AI Kukku Me Docs - Tools Guide" />
+  <meta property="og:description" content="Tools guide for Kukku — the built-in and external tools that agents can call on-device." />
+  <meta property="og:url" content="https://kukku.me/docs-tools.html" />
+  <meta property="og:image" content="https://kukku.me/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Personal AI Kukku Me Docs - Tools Guide" />
+  <meta name="twitter:description" content="Tools guide for Kukku — the built-in and external tools that agents can call on-device." />
+  <meta name="twitter:image" content="https://kukku.me/og-image.png" />
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <!-- SEO:end -->
+</head>
   <body>
     <div class="glow" aria-hidden="true"></div>
 
@@ -131,6 +157,7 @@
             <a href="docs-user.html">User Guide</a>
             <a href="docs-platform.html">Platform Guide</a>
             <a href="docs-tools.html">Tools Guide</a>
+            <a href="docs-skills.html">Skills Guide</a>
             <a href="docs-release.html">Release Roadmap</a>
           </div>
         </div>
@@ -141,14 +168,15 @@
 
     <main class="docs-wrap">
       <section class="docs-hero">
-        <p class="eyebrow">Documentation</p>
+        <p class="eyebrow">Documentation · Kukku 2.0</p>
         <h1>Personal AI Kukku Me Tools Guide</h1>
-        <p class="lede">A practical reference for end-user tools currently exposed in Kukku. Use the index below to jump to each tool section.</p>
+        <p class="lede">A practical reference for end-user tools currently exposed in Kukku. Use the index below to jump to each tool section. Kukku native skills (Habit Tracker, Expense Tracker) are documented separately in the <a href="docs-skills.html">Skills Guide</a>; note that skills and tools cannot be assigned to the same agent.</p>
         <p class="docs-product">Personal AI Kukku Me App Docs</p>
         <div class="docs-tabs">
           <a class="docs-tab" href="docs-user.html">User Guide</a>
           <a class="docs-tab" href="docs-platform.html">Platform Guide</a>
           <a class="docs-tab active" href="docs-tools.html">Tools Guide</a>
+          <a class="docs-tab" href="docs-skills.html">Skills Guide</a>
           <a class="docs-tab" href="docs-release.html">Release Roadmap</a>
         </div>
       </section>
@@ -158,6 +186,8 @@
         <ul>
           <li>This page includes only currently visible end-user tool types.</li>
           <li>Hidden/internal tools are intentionally excluded from public docs.</li>
+          <li>Kukku also has <strong>skills</strong> (native Habit Tracker and Expense Tracker, plus additional skills per the <code>skills.md</code> standard). Skills and tools <strong>cannot be assigned to the same agent</strong> — see the <a href="docs-skills.html">Skills Guide</a>.</li>
+          <li>Agents can also escalate to a <strong>remote or OpenAI-compatible model</strong> using your own API key; Kukku asks before sending data off-device.</li>
           <li><strong>Premium Subscription:</strong> Required for Analyzer mode and all tool orchestration. Direct mode does not run tool flows.</li>
         </ul>
       </section>
@@ -180,6 +210,7 @@
           <li><a href="#tool-image-analysis">Image Analysis</a></li>
           <li><a href="#tool-knowledge-base">Knowledge Base</a></li>
           <li><a href="#tool-custom">Custom Tool</a></li>
+          <li><a href="#tool-mcp">MCP Tools (Experimental)</a></li>
         </ol>
       </section>
 
@@ -329,6 +360,18 @@
           <li>Best for: private APIs and custom actions not covered by default tools.</li>
           <li>Example prompt: "Run my CRM sync tool and summarize new leads."</li>
         </ul>
+      </section>
+
+      <section class="doc-card tool-section" id="tool-mcp">
+        <h2>MCP Client Tool (Experimental)</h2>
+        <p>Lets an agent call tools exposed by a configured <strong>Model Context Protocol (MCP)</strong> server.</p>
+        <ul>
+          <li>Best for: extending Kukku with additional actions beyond the built-in tools.</li>
+          <li><strong>Enable first:</strong> Model Setup → Tooling Features → <strong>Enable MCP Client Tool</strong>. The <strong>MCP Client</strong> type then appears here in Tools.</li>
+          <li><strong>Configure:</strong> Server URL, Authentication (Bearer token / Header API key / Query API key / None), API Key / Token, and optional secret; plus advanced filters (include / exclude tools, read-only only, max tools, discovery mode).</li>
+          <li>Example prompt: "Use my connected MCP tool to fetch today's open tickets."</li>
+        </ul>
+        <p class="note"><strong>Full walkthrough:</strong> field-by-field setup and connection examples are in the <a href="docs-user.html#mcp-client-tool">User Guide</a>. Experimental: MCP support is early and may change across releases.</p>
       </section>
     </main>
   </body>

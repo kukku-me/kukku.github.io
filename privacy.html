@@ -3,13 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Kukku Privacy Policy" />
+    <meta name="description" content="Kukku privacy policy — how the Kukku personal AI app handles your data, with on-device, private-by-design processing." />
     <title>Kukku Privacy Policy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-  </head>
+  <!-- SEO:start -->
+  <link rel="canonical" href="https://kukku.me/privacy.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1f6f78" />
+  <meta name="author" content="Kukku AI Solutions" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kukku AI Solutions" />
+  <meta property="og:title" content="Kukku Privacy Policy" />
+  <meta property="og:description" content="Kukku privacy policy — how the Kukku personal AI app handles your data, with on-device, private-by-design processing." />
+  <meta property="og:url" content="https://kukku.me/privacy.html" />
+  <meta property="og:image" content="https://kukku.me/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kukku Privacy Policy" />
+  <meta name="twitter:description" content="Kukku privacy policy — how the Kukku personal AI app handles your data, with on-device, private-by-design processing." />
+  <meta name="twitter:image" content="https://kukku.me/og-image.png" />
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <!-- SEO:end -->
+</head>
   <body>
     <header class="nav">
       <div class="brand">
@@ -27,6 +53,7 @@
             <a href="docs-user.html">User Guide</a>
             <a href="docs-platform.html">Platform Guide</a>
             <a href="docs-tools.html">Tools Guide</a>
+            <a href="docs-skills.html">Skills Guide</a>
             <a href="docs-release.html">Release Roadmap</a>
           </div>
         </div>
@@ -40,7 +67,7 @@
         <div class="section-title">
           <p class="eyebrow">Legal</p>
           <h1>Privacy Policy</h1>
-          <p class="lede">Last updated: February 22, 2026</p>
+          <p class="lede">Last updated: July 29, 2026</p>
         </div>
 
         <article class="legal-card">
@@ -55,6 +82,8 @@
 
           <h2>4. When Data May Leave Device</h2>
           <p>If you enable tools or modes that use external services, relevant query data is sent to those providers to return results. Examples include web search providers, weather providers (Apple WeatherKit with Open-Meteo fallback), and third-party API tools you configure.</p>
+          <p><strong>Web search:</strong> Web search is optional and is not configured by default. It only sends data once you add your own search provider API key, and results are clearly attributed to their source.</p>
+          <p><strong>Remote and external models:</strong> Kukku runs local AI on-device by default. If you enable Escalation mode or connect an agent to a remote model or an OpenAI-compatible external endpoint using your own API key, the relevant prompt and context for that request are sent to the provider you configured. Kukku asks before routing a task to a more powerful model.</p>
 
           <h2>5. Permissions</h2>
           <p>Depending on features you use, Kukku may request access to camera, microphone/speech recognition, photos, contacts, calendars/reminders, health data (HealthKit), location (for weather and geocoding), and local network discovery.</p>

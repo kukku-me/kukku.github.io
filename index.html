@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Kukku AI Solutions company profile" />
+  <meta name="description" content="Kukku AI Solutions builds private, on-device and on-premise AI: the Kukku personal AI app, on-premise voice agents, AI unified messaging, and applied AI for manufacturing, pharmaceuticals and financial services." />
   <title>Kukku AI Solutions - Company Profile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -78,14 +78,46 @@
     .cp-rotator-word {
       position: relative;
       display: inline-block;
-      min-width: 9.5ch;
-      color: var(--sea-dark);
-      transition: opacity 220ms ease, transform 220ms ease;
+      background: linear-gradient(100deg, var(--sea), var(--sun) 92%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
     }
 
-    .cp-rotator-word.is-changing {
-      opacity: 0.2;
-      transform: translateY(0.18em);
+    /* Shared roll transition for hero headline + feed line */
+    .cp-roll {
+      transition: opacity 240ms ease, transform 240ms ease;
+    }
+
+    .cp-roll.is-changing {
+      opacity: 0.12;
+      transform: translateY(0.16em);
+    }
+
+    .cp-feed {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 22px;
+      flex-wrap: wrap;
+    }
+
+    .cp-feed-star {
+      color: var(--sun);
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+
+    .cp-feed-word {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--sea-dark);
     }
 
     .cp-lead {
@@ -118,69 +150,13 @@
 
     .nav {
       gap: 16px;
-      justify-content: flex-start;
+      justify-content: space-between;
       flex-wrap: nowrap;
       align-items: center;
     }
 
     .nav .brand {
-      flex: 0 0 auto;
-    }
-
-    .cp-nav-feed {
       flex: 1 1 auto;
-      display: flex;
-      align-items: center;
-      min-width: 0;
-      width: auto;
-      min-height: 44px;
-    }
-
-    .cp-nav-feed-shell {
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      width: 100%;
-      border-radius: 999px;
-      background:
-        linear-gradient(90deg, rgba(199, 230, 242, 0.06), rgba(255, 255, 255, 0.22) 12%, rgba(255, 255, 255, 0.22) 88%, rgba(240, 218, 193, 0.08));
-      min-height: 44px;
-      padding: 0;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
-    }
-
-    .cp-nav-feed-track {
-      display: flex;
-      align-items: center;
-      width: max-content;
-      gap: 20px;
-      white-space: nowrap;
-      will-change: transform;
-      animation: cp-marquee 26s linear infinite;
-    }
-
-    .cp-nav-feed-shell:hover .cp-nav-feed-track {
-      animation-play-state: paused;
-    }
-
-    .cp-nav-feed-item {
-      display: inline-flex;
-      align-items: center;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.64rem;
-      line-height: 1;
-      font-weight: 700;
-      color: var(--sea-dark);
-    }
-
-    .cp-nav-feed-sep {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-      transform: translateY(-1px);
-      opacity: 0.36;
     }
 
     .nav-links {
@@ -220,6 +196,222 @@
       border-radius: 18px;
       padding: 20px;
       box-shadow: 0 16px 32px rgba(10, 11, 13, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .cp-services article:hover,
+    .cp-timeline article:hover,
+    .cp-values article:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 44px rgba(10, 11, 13, 0.13);
+    }
+
+    .cp-svc-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      font-size: 1.5rem;
+      line-height: 1;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      background: linear-gradient(150deg, var(--sky), rgba(246, 178, 107, 0.32));
+    }
+
+    .cp-bullets {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      margin-top: 4px;
+    }
+
+    .cp-bullets li {
+      position: relative;
+      padding-left: 20px;
+      line-height: 1.5;
+      color: rgba(10, 11, 13, 0.74);
+      font-size: 0.93rem;
+    }
+
+    .cp-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 0.5em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--sea);
+    }
+
+    /* Section heading */
+    .cp-sec-head {
+      max-width: 62ch;
+      margin: 0 0 22px;
+    }
+
+    .cp-sec-head .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .cp-sec-head h2 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+      font-weight: 700;
+      line-height: 1.14;
+      margin-bottom: 8px;
+    }
+
+    .cp-sec-head p {
+      color: rgba(10, 11, 13, 0.72);
+      line-height: 1.6;
+    }
+
+    /* Nav CTA button */
+    .cp-nav-cta {
+      background: var(--sea);
+      color: #fff !important;
+      padding: 9px 18px !important;
+      border-radius: 999px;
+      box-shadow: 0 10px 20px rgba(31, 111, 120, 0.22);
+      transition: background 160ms ease;
+    }
+
+    .cp-nav-cta:hover {
+      background: var(--sea-dark);
+    }
+
+    /* Hero CTA row */
+    .cp-hero-cta {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    /* Offerings bridge cards */
+    .cp-offerings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .cp-offer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(199, 230, 242, 0.5), transparent 52%),
+        #fff;
+      box-shadow: 0 18px 38px rgba(10, 11, 13, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      overflow: hidden;
+    }
+
+    .cp-offer:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 28px 52px rgba(10, 11, 13, 0.14);
+    }
+
+    .cp-offer-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      font-size: 1.8rem;
+      line-height: 1;
+      border-radius: 16px;
+      background: linear-gradient(150deg, var(--sky), rgba(246, 178, 107, 0.32));
+    }
+
+    .cp-offer h3 {
+      font-family: "Fraunces", serif;
+      font-size: 1.35rem;
+    }
+
+    .cp-offer p {
+      color: rgba(10, 11, 13, 0.72);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .cp-offer-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cp-offer-chips span {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--sea-dark);
+      background: rgba(199, 230, 242, 0.5);
+      border: 1px solid rgba(31, 111, 120, 0.18);
+      border-radius: 999px;
+      padding: 5px 11px;
+    }
+
+    .cp-offer-link {
+      font-weight: 600;
+      color: var(--sea-dark);
+    }
+
+    /* Numbered process (methodology) */
+    .cp-process {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .cp-process article {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 16px 32px rgba(10, 11, 13, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .cp-process article:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 44px rgba(10, 11, 13, 0.13);
+    }
+
+    .cp-step-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .cp-step-num {
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--sea-dark);
+      color: #fff;
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cp-process h3 {
+      font-family: "Fraunces", serif;
+      font-size: 1.12rem;
+      margin-bottom: 8px;
     }
 
     .cp-services h3,
@@ -338,6 +530,7 @@
       .cp-hero,
       .cp-services,
       .cp-timeline,
+      .cp-process,
       .cp-values {
         grid-template-columns: 1fr;
       }
@@ -391,6 +584,57 @@
       }
     }
   </style>
+  <!-- SEO:start -->
+  <link rel="canonical" href="https://kukku.me/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1f6f78" />
+  <meta name="author" content="Kukku AI Solutions" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kukku AI Solutions" />
+  <meta property="og:title" content="Kukku AI Solutions - Company Profile" />
+  <meta property="og:description" content="Kukku AI Solutions builds private, on-device and on-premise AI: the Kukku personal AI app, on-premise voice agents, AI unified messaging, and applied AI for manufacturing, pharmaceuticals and financial services." />
+  <meta property="og:url" content="https://kukku.me/" />
+  <meta property="og:image" content="https://kukku.me/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kukku AI Solutions - Company Profile" />
+  <meta name="twitter:description" content="Kukku AI Solutions builds private, on-device and on-premise AI: the Kukku personal AI app, on-premise voice agents, AI unified messaging, and applied AI for manufacturing, pharmaceuticals and financial services." />
+  <meta name="twitter:image" content="https://kukku.me/og-image.png" />
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <!-- SEO:end -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://kukku.me/#organization",
+        "name": "Kukku AI Solutions",
+        "url": "https://kukku.me/",
+        "logo": "https://kukku.me/icon-512.png",
+        "image": "https://kukku.me/og-image.png",
+        "description": "Kukku AI Solutions builds private, on-device and on-premise AI — the Kukku personal AI app, on-premise voice agents, AI unified messaging, and applied AI for manufacturing, pharmaceuticals and financial services.",
+        "email": "support@kukku.me",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kukku.me/#website",
+        "url": "https://kukku.me/",
+        "name": "Kukku AI Solutions",
+        "publisher": { "@id": "https://kukku.me/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="glow" aria-hidden="true"></div>
@@ -401,36 +645,11 @@
         <img class="brand-icon" src="KukkuIcon.png" alt="Kukku" />
       </a>
     </div>
-    <div class="cp-nav-feed" aria-label="Signal feed">
-      <div class="cp-nav-feed-shell">
-        <div class="cp-nav-feed-track">
-          <span class="cp-nav-feed-item">AI infrastructure for the future</span>
-          <span class="cp-nav-feed-sep">✦</span>
-          <span class="cp-nav-feed-item">Workflows reimagined</span>
-          <span class="cp-nav-feed-sep">✦</span>
-          <span class="cp-nav-feed-item">AI product innovation</span>
-          <span class="cp-nav-feed-sep">✦</span>
-          <span class="cp-nav-feed-item">Hybrid AI strategy: private, cloud, and frontier models tailored to your risk</span>
-          <span class="cp-nav-feed-sep">✦</span>
-          <span class="cp-nav-feed-item">Operationalizing intelligence</span>
-          <span class="cp-nav-feed-sep">✦</span>
-          <span class="cp-nav-feed-item">AI infrastructure for the future</span>
-          <span class="cp-nav-feed-sep">✦</span>
-          <span class="cp-nav-feed-item">Workflows reimagined</span>
-          <span class="cp-nav-feed-sep">✦</span>
-          <span class="cp-nav-feed-item">AI product innovation</span>
-          <span class="cp-nav-feed-sep">✦</span>
-          <span class="cp-nav-feed-item">Hybrid AI strategy: private, cloud, and frontier models tailored to your risk</span>
-          <span class="cp-nav-feed-sep">✦</span>
-          <span class="cp-nav-feed-item">Operationalizing intelligence</span>
-        </div>
-      </div>
-    </div>
     <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="intro.html">Products</a>
-      <a href="#approach">Services</a>
-      <a href="#contact">Contact Us</a>
+      <a href="platform.html">Products</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="blog/">Blog</a>
+      <a class="nav-cta" href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -440,8 +659,9 @@
         <div class="cp-hero-copy">
           <p class="eyebrow">AI Solutions Company</p>
           <h1 class="cp-rotator">
-            <span class="cp-rotator-prefix">AI solutions for</span>
-            <span class="cp-rotator-word" data-words="secure teams|on-premise|cloud|edge">secure teams</span>
+            <span class="cp-rotator-word cp-roll"
+              data-words="AI solutions for secure teams|AI solutions for on-premise|AI solutions for private cloud|AI solutions for the edge">AI
+              solutions for secure teams</span>
           </h1>
           <p class="cp-lead">
             We bridge the gap between AI potential and operational reality. From on-device edge intelligence to secure
@@ -452,44 +672,162 @@
             <span>Workflow Modernization</span>
             <span>AI Product Development</span>
           </div>
+          <p class="cp-feed" aria-label="What we do">
+            <span class="cp-feed-star" aria-hidden="true">✦</span>
+            <span class="cp-feed-word cp-roll"
+              data-words="AI infrastructure for the future|Workflows reimagined|AI product innovation|Hybrid AI strategy — private, cloud &amp; frontier models tailored to your risk|Operationalizing intelligence">AI
+              infrastructure for the future</span>
+          </p>
+          <div class="cp-hero-cta">
+            <a class="button" href="solutions.html">Explore Solutions</a>
+            <a class="ghost" href="platform.html">Platform Stack</a>
+          </div>
         </div>
       </article>
     </section>
 
-    <section id="services" class="cp-services">
+    <section id="services" class="cp-block">
+      <div class="cp-sec-head" data-reveal>
+        <p class="eyebrow">What we do</p>
+        <h2>Services that turn AI into outcomes</h2>
+        <p>From product engineering to secure infrastructure and workflow modernization — delivered with security and
+          governance built in from day one.</p>
+      </div>
+      <div class="cp-services">
       <article data-reveal data-delay="50">
+        <span class="cp-svc-icon" aria-hidden="true">🧩</span>
         <h3>AI-Focused Product Development</h3>
-        <p>AI products for secure private environments, local enterprise data centers, cloud deployments, and edge experiences across mobile and desktop platforms, designed for secure, agentic user experiences.</p>
+        <ul class="cp-bullets">
+          <li>Private on-device, edge, cloud &amp; data-center apps</li>
+          <li>Native mobile and desktop experiences</li>
+          <li>Agentic, tool-using user interfaces</li>
+          <li>Prototype through production delivery</li>
+        </ul>
       </article>
       <article data-reveal data-delay="110">
+        <span class="cp-svc-icon" aria-hidden="true">☁️</span>
         <h3>AI Cloud Infrastructure Advisory</h3>
-        <p>Architecture guidance for secure model serving, cost-aware scaling, and enterprise-ready deployment patterns.</p>
+        <ul class="cp-bullets">
+          <li>Secure model-serving architecture</li>
+          <li>Cost-aware scaling &amp; capacity planning</li>
+          <li>Enterprise-ready deployment patterns</li>
+          <li>Hybrid: private, cloud &amp; frontier models</li>
+        </ul>
       </article>
       <article data-reveal data-delay="170">
+        <span class="cp-svc-icon" aria-hidden="true">⚙️</span>
         <h3>Modernization with AI Workflows</h3>
-        <p>Transform legacy processes into AI-assisted operations with practical automation and governance controls.</p>
+        <ul class="cp-bullets">
+          <li>Automate legacy, manual processes</li>
+          <li>Practical automation with human-in-the-loop</li>
+          <li>Governance &amp; accountability controls</li>
+          <li>Measurable efficiency gains</li>
+        </ul>
       </article>
+      </div>
     </section>
 
-    <section id="approach" class="cp-timeline">
+    <section class="cp-block">
+      <div class="cp-sec-head" data-reveal>
+        <p class="eyebrow">Our offerings</p>
+        <h2>Three ways we deliver services</h2>
+        <p>A growing family of AI products and platforms you can deploy today, tailored solutions built around your
+          industry, and advisory to help you get there.</p>
+      </div>
+      <div class="cp-offerings">
+        <a class="cp-offer" href="platform.html" data-reveal data-delay="60">
+          <span class="cp-offer-icon" aria-hidden="true">📦</span>
+          <h3>Products &amp; Platform</h3>
+          <p>Our family of AI-powered products and platforms — deployable on-device or fully on-premise. The Kukku app
+            is one of several.</p>
+          <span class="cp-offer-chips">
+            <span>Kukku AI App</span>
+            <span>Voice Agent</span>
+            <span>Unified Messaging</span>
+          </span>
+          <span class="cp-offer-link">Explore products →</span>
+        </a>
+        <a class="cp-offer" href="solutions.html" data-reveal data-delay="120">
+          <span class="cp-offer-icon" aria-hidden="true">🏭</span>
+          <h3>Industry Solutions</h3>
+          <p>Applied AI tailored to your sector, shaped around real workflows and compliance needs.</p>
+          <span class="cp-offer-chips">
+            <span>Manufacturing</span>
+            <span>Pharmaceuticals</span>
+            <span>Financial Services</span>
+          </span>
+          <span class="cp-offer-link">Explore Solutions →</span>
+        </a>
+        <a class="cp-offer" href="#contact" data-reveal data-delay="180">
+          <span class="cp-offer-icon" aria-hidden="true">🧭</span>
+          <h3>AI Advisory</h3>
+          <p>Architecture and strategy guidance to deploy AI securely and cost-effectively.</p>
+          <ul class="cp-bullets">
+            <li>Secure model-serving architecture</li>
+            <li>Cost-aware scaling &amp; capacity planning</li>
+            <li>Enterprise-ready deployment patterns</li>
+            <li>Hybrid: private, cloud &amp; frontier models</li>
+          </ul>
+          <span class="cp-offer-link">Talk to us →</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="approach" class="cp-block">
+      <div class="cp-sec-head" data-reveal>
+        <p class="eyebrow">How we work</p>
+        <h2>A clear path from idea to production</h2>
+        <p>A pragmatic, three-stage method that de-risks delivery and industrializes what works.</p>
+      </div>
+      <div class="cp-process">
       <article data-reveal data-delay="60">
-        <span class="cp-phase">Strategy</span>
+        <div class="cp-step-head">
+          <span class="cp-step-num">01</span>
+          <span class="cp-phase">Strategy</span>
+        </div>
         <h3>Assess and Design</h3>
-        <p>Map current systems, identify high-value AI opportunities, and define a realistic implementation architecture.</p>
+        <ul class="cp-bullets">
+          <li>Map current systems &amp; data</li>
+          <li>Identify high-value AI opportunities</li>
+          <li>Define target architecture</li>
+          <li>Realistic, risk-aware roadmap</li>
+        </ul>
       </article>
       <article data-reveal data-delay="120">
-        <span class="cp-phase">Pilot Delivery</span>
+        <div class="cp-step-head">
+          <span class="cp-step-num">02</span>
+          <span class="cp-phase">Pilot Delivery</span>
+        </div>
         <h3>Pilot and Validate</h3>
-        <p>Launch focused pilots with clear quality, security, and adoption metrics before broader rollout.</p>
+        <ul class="cp-bullets">
+          <li>Focused, time-boxed pilots</li>
+          <li>Clear quality &amp; security metrics</li>
+          <li>Adoption &amp; value validation</li>
+          <li>Go / no-go before rollout</li>
+        </ul>
       </article>
       <article data-reveal data-delay="180">
-        <span class="cp-phase">Scale Operations</span>
+        <div class="cp-step-head">
+          <span class="cp-step-num">03</span>
+          <span class="cp-phase">Scale Operations</span>
+        </div>
         <h3>Scale and Govern</h3>
-        <p>Industrialize pipelines with monitoring, model lifecycle controls, and operating playbooks for teams.</p>
+        <ul class="cp-bullets">
+          <li>Industrialize data &amp; model pipelines</li>
+          <li>Monitoring &amp; lifecycle controls</li>
+          <li>Operating playbooks for teams</li>
+          <li>Governance &amp; accountability</li>
+        </ul>
       </article>
+      </div>
     </section>
 
-    <section class="cp-values">
+    <section class="cp-block">
+      <div class="cp-sec-head" data-reveal>
+        <p class="eyebrow">Why Kukku</p>
+        <h2>What sets our delivery apart</h2>
+      </div>
+      <div class="cp-values">
       <article data-reveal data-delay="70">
         <h3>Trust by Design</h3>
         <p>Security, privacy, and model accountability are built into architecture decisions from day one.</p>
@@ -502,6 +840,7 @@
         <h3>Engineering Partnership</h3>
         <p>We work directly with your teams to transfer capability and establish long-term delivery discipline.</p>
       </article>
+      </div>
     </section>
 
     <section id="contact" class="cp-cta" data-reveal data-delay="90">
@@ -532,7 +871,7 @@
 
   <script>
     const elements = document.querySelectorAll("[data-reveal]");
-    const rotatingWord = document.querySelector(".cp-rotator-word[data-words]");
+    const rollers = document.querySelectorAll("[data-words]");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const setVisible = (el) => {
@@ -558,23 +897,23 @@
       elements.forEach((el) => setVisible(el));
     }
 
-    if (rotatingWord && !reduceMotion) {
-      const words = (rotatingWord.dataset.words || "")
-        .split("|")
-        .map((word) => word.trim())
-        .filter(Boolean);
-      let wordIndex = 0;
-
-      if (words.length > 1) {
+    if (!reduceMotion) {
+      rollers.forEach((el, idx) => {
+        const words = (el.dataset.words || "")
+          .split("|")
+          .map((word) => word.trim())
+          .filter(Boolean);
+        if (words.length < 2) return;
+        let wordIndex = 0;
         window.setInterval(() => {
-          rotatingWord.classList.add("is-changing");
+          el.classList.add("is-changing");
           window.setTimeout(() => {
             wordIndex = (wordIndex + 1) % words.length;
-            rotatingWord.textContent = words[wordIndex];
-            rotatingWord.classList.remove("is-changing");
-          }, 220);
-        }, 2200);
-      }
+            el.textContent = words[wordIndex];
+            el.classList.remove("is-changing");
+          }, 240);
+        }, 2600 + idx * 400);
+      });
     }
   </script>
 </body>

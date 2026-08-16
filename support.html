@@ -3,13 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Kukku Support" />
+    <meta name="description" content="Kukku support — help, permissions and troubleshooting for the Kukku personal AI app." />
     <title>Kukku Support</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-  </head>
+  <!-- SEO:start -->
+  <link rel="canonical" href="https://kukku.me/support.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1f6f78" />
+  <meta name="author" content="Kukku AI Solutions" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kukku AI Solutions" />
+  <meta property="og:title" content="Kukku Support" />
+  <meta property="og:description" content="Kukku support — help, permissions and troubleshooting for the Kukku personal AI app." />
+  <meta property="og:url" content="https://kukku.me/support.html" />
+  <meta property="og:image" content="https://kukku.me/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kukku Support" />
+  <meta name="twitter:description" content="Kukku support — help, permissions and troubleshooting for the Kukku personal AI app." />
+  <meta name="twitter:image" content="https://kukku.me/og-image.png" />
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <!-- SEO:end -->
+</head>
   <body>
     <header class="nav">
       <div class="brand">
@@ -27,6 +53,7 @@
             <a href="docs-user.html">User Guide</a>
             <a href="docs-platform.html">Platform Guide</a>
             <a href="docs-tools.html">Tools Guide</a>
+            <a href="docs-skills.html">Skills Guide</a>
             <a href="docs-release.html">Release Roadmap</a>
           </div>
         </div>
@@ -48,8 +75,9 @@
           <p>Email: <a href="mailto:support@kukku.me">support@kukku.me</a></p>
 
           <h2>Common Topics</h2>
-          <p><strong>Permissions:</strong> If voice, camera, contacts, calendar, health, or local network features fail, verify system permissions in iOS/macOS Settings.</p>
+          <p><strong>Permissions:</strong> If voice, camera, contacts, calendar, health, or local network features fail, verify system permissions in iOS Settings.</p>
           <p><strong>Tool APIs:</strong> If external tools fail, re-check provider API keys and base URLs in Tools settings.</p>
+          <p><strong>Remote &amp; external models:</strong> If Escalation mode or a connected remote / OpenAI-compatible endpoint returns errors, verify the API key, base URL, and model name, and confirm the device has network access.</p>
           <p><strong>Backup/Restore:</strong> API keys are redacted in backups for security and must be re-entered after restore.</p>
           <p><strong>Performance:</strong> On-device model performance varies by device memory and thermal state.</p>
 
