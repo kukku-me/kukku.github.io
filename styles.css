@@ -1054,3 +1054,15 @@ a.gemma-badge--link:hover .gemma-badge-arrow {
 html {
   scroll-behavior: smooth;
 }
+
+/* Sample advisory download list (docs) */
+.advisory-list { list-style: none; padding-left: 0; display: grid; gap: 8px; }
+.advisory-list li { line-height: 1.5; color: rgba(10, 11, 13, 0.66); font-size: 0.96rem; }
+.advisory-list a {
+  font-weight: 600;
+  color: var(--sea-dark);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(11, 60, 68, 0.4);
+}
+.advisory-list a::before { content: "\2193\00a0"; color: var(--sea); }
+.advisory-list a:hover { color: var(--sea); border-bottom-style: solid; }

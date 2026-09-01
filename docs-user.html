@@ -88,24 +88,24 @@
       }
     </style>
   <!-- SEO:start -->
-  <link rel="canonical" href="https://kukku.me/docs-user.html" />
+  <link rel="canonical" href="https://www.kukku.me/docs-user.html" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#1f6f78" />
-  <meta name="author" content="Kukku AI Solutions" />
+  <meta name="author" content="Ibhan AI Labs Pte Ltd" />
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Kukku AI Solutions" />
+  <meta property="og:site_name" content="Kukku" />
   <meta property="og:title" content="Personal AI Kukku Me Docs - User Guide" />
   <meta property="og:description" content="User guide for the Kukku personal AI app — agents, skills, tools, documents, nearby collaboration and settings." />
-  <meta property="og:url" content="https://kukku.me/docs-user.html" />
-  <meta property="og:image" content="https://kukku.me/og-image.png" />
+  <meta property="og:url" content="https://www.kukku.me/docs-user.html" />
+  <meta property="og:image" content="https://www.kukku.me/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Personal AI Kukku Me Docs - User Guide" />
   <meta name="twitter:description" content="User guide for the Kukku personal AI app — agents, skills, tools, documents, nearby collaboration and settings." />
-  <meta name="twitter:image" content="https://kukku.me/og-image.png" />
+  <meta name="twitter:image" content="https://www.kukku.me/og-image.png" />
   <!-- Icons -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -308,7 +308,7 @@
         <p class="note"><strong>Experimental:</strong> MCP support is early and may change across releases. Quick setup needs only Name, Server URL, Authentication and API Key — use Advanced options only when your MCP server requires them. Credentials are stored on-device and redacted from backups.</p>
       </section>
 
-      <section class="doc-card">
+      <section class="doc-card" id="influence">
         <h2>5. How to Influence Agent Output</h2>
         <h3>Agent-level controls</h3>
         <ul>
@@ -327,6 +327,36 @@
           <li><strong>Advanced settings:</strong> Tune temperature, top-p, repetition controls, and output token limits.</li>
           <li><strong>Longer responses:</strong> Increase output token limit (not character count) for more detailed answers.</li>
         </ul>
+
+        <h3>Ground the agent with an advisory document</h3>
+        <p>
+          Uploading a document to an agent is the most direct way to bias its responses toward guidance you trust. When
+          you add an advisory — a note from a coach, dietician, physician, or financial advisor — the agent reads it as
+          context and takes it into consideration when it answers, so its suggestions follow that advisory's preferences,
+          limits, and tone instead of generic defaults.
+        </p>
+        <p><strong>How to use it:</strong></p>
+        <ol>
+          <li>Download a sample advisory below (or write your own as a plain <code>.txt</code>).</li>
+          <li>In the app, open <strong>Actions → Manage Documents</strong>, select the <strong>Scope</strong> (the agent
+            name) you want to ground, and upload the file from iOS.</li>
+          <li>Ask a related question. The agent now grounds its reply in the advisory — for example a Health &amp; Fitness
+            agent will keep activity within a physician's stated limits.</li>
+        </ol>
+        <p><strong>Sample advisories to download and upload:</strong></p>
+        <ul class="advisory-list">
+          <li><a href="docs/sample-advisory/wellness-coach-habit-plan.txt" download>Wellness coach — habit plan</a> · grounds a Habits agent</li>
+          <li><a href="docs/sample-advisory/dietician-nutrition-plan.txt" download>Dietician — nutrition plan</a> · grounds a Food &amp; Nutrition agent</li>
+          <li><a href="docs/sample-advisory/physician-post-discharge-activity.txt" download>Physician — post-discharge activity note</a> · grounds a Health &amp; Fitness agent</li>
+          <li><a href="docs/sample-advisory/financial-advisor-budget-note.txt" download>Financial advisor — budget note</a> · grounds an Expenses agent</li>
+        </ul>
+        <p class="note">
+          <strong>Grounding vs. facts:</strong> An advisory biases <em>how</em> the agent responds; it does not guarantee
+          the model repeats it verbatim. Keep advisories short and specific for the strongest effect. These samples are
+          for demonstration only and are not professional medical, dietetic, or financial advice — replace them with
+          guidance from your own qualified professional.
+        </p>
+
         <p class="note"><strong>Practical order:</strong> First adjust system prompt/workflow, then tool metadata, then model advanced settings.</p>
       </section>
 
@@ -394,7 +424,7 @@
     </main>
 
     <footer>
-      <p>© 2026 Kukku Me.</p>
+      <p>© 2026 Ibhan AI Labs Pte Ltd.</p>
     </footer>
   </body>
 </html>

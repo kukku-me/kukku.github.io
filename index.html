@@ -1,608 +1,36 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Kukku AI Solutions builds private, on-device and on-premise AI: the Kukku personal AI app, on-premise voice agents, AI unified messaging, and applied AI for manufacturing, pharmaceuticals and financial services." />
-  <title>Kukku AI Solutions - Company Profile</title>
+  <meta name="description" content="Kukku is your on-device personal AI for iOS — private agents for health &amp; fitness, nutrition, habits and expenses that reason and act, running locally on your device, not the cloud." />
+  <title>Kukku — On-device AI Companion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .profile-shell {
-      display: grid;
-      gap: 26px;
-    }
-
-    .cp-hero {
-      display: block;
-    }
-
-    .cp-card {
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: 0 24px 46px rgba(10, 11, 13, 0.1);
-      backdrop-filter: blur(4px);
-    }
-
-    .cp-hero-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.94) 42%, rgba(255, 255, 255, 0.76) 68%, rgba(255, 255, 255, 0.54) 100%),
-        url("company-hero-graphic.png") right center / 48% auto no-repeat,
-        rgba(255, 255, 255, 0.9);
-    }
-
-    .cp-hero-copy {
-      position: relative;
-      z-index: 1;
-      min-width: 0;
-      max-width: 62%;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .cp-hero .cp-card h1 {
-      font-family: "Fraunces", serif;
-      font-size: clamp(1.55rem, 2.5vw, 2.3rem);
-      line-height: 1;
-      margin-bottom: 16px;
-      max-width: none;
-      white-space: nowrap;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .cp-rotator {
-      display: inline-flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: center;
-      gap: 0.22em;
-    }
-
-    .cp-rotator-prefix {
-      white-space: nowrap;
-    }
-
-    .cp-rotator-word {
-      position: relative;
-      display: inline-block;
-      background: linear-gradient(100deg, var(--sea), var(--sun) 92%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-    }
-
-    /* Shared roll transition for hero headline + feed line */
-    .cp-roll {
-      transition: opacity 240ms ease, transform 240ms ease;
-    }
-
-    .cp-roll.is-changing {
-      opacity: 0.12;
-      transform: translateY(0.16em);
-    }
-
-    .cp-feed {
-      margin-top: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 22px;
-      flex-wrap: wrap;
-    }
-
-    .cp-feed-star {
-      color: var(--sun);
-      font-size: 0.8rem;
-      line-height: 1;
-    }
-
-    .cp-feed-word {
-      display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: var(--sea-dark);
-    }
-
-    .cp-lead {
-      font-size: 1.03rem;
-      line-height: 1.68;
-      color: rgba(10, 11, 13, 0.74);
-      max-width: 62ch;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cp-tags {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .cp-tags span {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border-radius: 999px;
-      border: 1px solid rgba(11, 60, 68, 0.2);
-      background: rgba(198, 230, 242, 0.62);
-      color: var(--sea-dark);
-      padding: 8px 12px;
-    }
-
-    .nav {
-      gap: 16px;
-      justify-content: space-between;
-      flex-wrap: nowrap;
-      align-items: center;
-    }
-
-    .nav .brand {
-      flex: 1 1 auto;
-    }
-
-    .nav-links {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      white-space: nowrap;
-    }
-
-    .nav-links a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-    }
-
-    @keyframes cp-marquee {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .cp-services {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .cp-services article,
-    .cp-timeline article,
-    .cp-values article {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 16px 32px rgba(10, 11, 13, 0.08);
-      transition: transform 180ms ease, box-shadow 180ms ease;
-    }
-
-    .cp-services article:hover,
-    .cp-timeline article:hover,
-    .cp-values article:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 44px rgba(10, 11, 13, 0.13);
-    }
-
-    .cp-svc-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px;
-      height: 46px;
-      font-size: 1.5rem;
-      line-height: 1;
-      border-radius: 14px;
-      margin-bottom: 12px;
-      background: linear-gradient(150deg, var(--sky), rgba(246, 178, 107, 0.32));
-    }
-
-    .cp-bullets {
-      list-style: none;
-      display: grid;
-      gap: 9px;
-      margin-top: 4px;
-    }
-
-    .cp-bullets li {
-      position: relative;
-      padding-left: 20px;
-      line-height: 1.5;
-      color: rgba(10, 11, 13, 0.74);
-      font-size: 0.93rem;
-    }
-
-    .cp-bullets li::before {
-      content: "";
-      position: absolute;
-      left: 3px;
-      top: 0.5em;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--sea);
-    }
-
-    /* Section heading */
-    .cp-sec-head {
-      max-width: 62ch;
-      margin: 0 0 22px;
-    }
-
-    .cp-sec-head .eyebrow {
-      margin-bottom: 8px;
-    }
-
-    .cp-sec-head h2 {
-      font-family: "Fraunces", serif;
-      font-size: clamp(1.6rem, 2.6vw, 2.3rem);
-      font-weight: 700;
-      line-height: 1.14;
-      margin-bottom: 8px;
-    }
-
-    .cp-sec-head p {
-      color: rgba(10, 11, 13, 0.72);
-      line-height: 1.6;
-    }
-
-    /* Nav CTA button */
-    .cp-nav-cta {
-      background: var(--sea);
-      color: #fff !important;
-      padding: 9px 18px !important;
-      border-radius: 999px;
-      box-shadow: 0 10px 20px rgba(31, 111, 120, 0.22);
-      transition: background 160ms ease;
-    }
-
-    .cp-nav-cta:hover {
-      background: var(--sea-dark);
-    }
-
-    /* Hero CTA row */
-    .cp-hero-cta {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-    }
-
-    /* Offerings bridge cards */
-    .cp-offerings {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-    }
-
-    .cp-offer {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--ink);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 26px;
-      background:
-        radial-gradient(circle at 100% 0%, rgba(199, 230, 242, 0.5), transparent 52%),
-        #fff;
-      box-shadow: 0 18px 38px rgba(10, 11, 13, 0.08);
-      transition: transform 180ms ease, box-shadow 180ms ease;
-      overflow: hidden;
-    }
-
-    .cp-offer:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 28px 52px rgba(10, 11, 13, 0.14);
-    }
-
-    .cp-offer-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 54px;
-      height: 54px;
-      font-size: 1.8rem;
-      line-height: 1;
-      border-radius: 16px;
-      background: linear-gradient(150deg, var(--sky), rgba(246, 178, 107, 0.32));
-    }
-
-    .cp-offer h3 {
-      font-family: "Fraunces", serif;
-      font-size: 1.35rem;
-    }
-
-    .cp-offer p {
-      color: rgba(10, 11, 13, 0.72);
-      line-height: 1.55;
-      flex: 1;
-    }
-
-    .cp-offer-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .cp-offer-chips span {
-      font-size: 0.76rem;
-      font-weight: 600;
-      color: var(--sea-dark);
-      background: rgba(199, 230, 242, 0.5);
-      border: 1px solid rgba(31, 111, 120, 0.18);
-      border-radius: 999px;
-      padding: 5px 11px;
-    }
-
-    .cp-offer-link {
-      font-weight: 600;
-      color: var(--sea-dark);
-    }
-
-    /* Numbered process (methodology) */
-    .cp-process {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .cp-process article {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 16px 32px rgba(10, 11, 13, 0.08);
-      transition: transform 180ms ease, box-shadow 180ms ease;
-    }
-
-    .cp-process article:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 44px rgba(10, 11, 13, 0.13);
-    }
-
-    .cp-step-head {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .cp-step-num {
-      flex: 0 0 auto;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--sea-dark);
-      color: #fff;
-      font-family: "Fraunces", serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .cp-process h3 {
-      font-family: "Fraunces", serif;
-      font-size: 1.12rem;
-      margin-bottom: 8px;
-    }
-
-    .cp-services h3,
-    .cp-timeline h3,
-    .cp-values h3 {
-      font-family: "Fraunces", serif;
-      margin-bottom: 8px;
-      font-size: 1.12rem;
-    }
-
-    .cp-services p,
-    .cp-timeline p,
-    .cp-values p {
-      line-height: 1.58;
-      color: rgba(10, 11, 13, 0.73);
-    }
-
-    .cp-timeline {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .cp-phase {
-      display: inline-flex;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--sea-dark);
-      font-size: 0.74rem;
-      border-radius: 999px;
-      border: 1px solid rgba(11, 60, 68, 0.2);
-      padding: 5px 10px;
-      background: rgba(240, 218, 193, 0.45);
-    }
-
-    .cp-values {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .cp-cta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      background:
-        radial-gradient(circle at 0% 100%, rgba(199, 230, 242, 0.38), transparent 38%),
-        radial-gradient(circle at 100% 0%, rgba(246, 178, 107, 0.22), transparent 36%),
-        #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 16px 30px rgba(10, 11, 13, 0.08);
-    }
-
-    .cp-cta h3 {
-      font-family: "Fraunces", serif;
-      font-size: 1.5rem;
-      margin-bottom: 6px;
-    }
-
-    .cp-socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .cp-socials a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid rgba(11, 60, 68, 0.14);
-      background: rgba(255, 255, 255, 0.82);
-      color: var(--sea-dark);
-      text-decoration: none;
-    }
-
-    .cp-socials svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
-    [data-reveal] {
-      opacity: 0;
-      transform: translateY(18px) scale(0.99);
-      transition: opacity 620ms ease, transform 620ms ease;
-    }
-
-    [data-reveal].visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    @media (max-width: 980px) {
-      .nav {
-        flex-wrap: wrap;
-      }
-
-      .nav .brand {
-        flex: 1 1 auto;
-      }
-
-      .cp-nav-feed {
-        order: 3;
-        flex-basis: 100%;
-        width: 100%;
-      }
-
-      .cp-hero,
-      .cp-services,
-      .cp-timeline,
-      .cp-process,
-      .cp-values {
-        grid-template-columns: 1fr;
-      }
-
-      .cp-hero-card {
-        min-height: auto;
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.9) 58%, rgba(255, 255, 255, 0.8) 100%),
-          url("company-hero-graphic.png") center bottom / cover no-repeat,
-          rgba(255, 255, 255, 0.9);
-      }
-
-      .cp-hero-copy {
-        max-width: 100%;
-      }
-
-      .cp-hero .cp-card h1 {
-        white-space: normal;
-        line-height: 1.08;
-      }
-
-      .cp-cta {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      [data-reveal] {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-
-      .cp-marquee-track {
-        animation: none !important;
-        transform: none !important;
-        white-space: normal;
-        width: auto;
-        flex-wrap: wrap;
-        padding: 0 14px;
-      }
-
-      .cp-nav-feed-track {
-        animation: none !important;
-        transform: none !important;
-        white-space: normal;
-        width: auto;
-        flex-wrap: wrap;
-        padding: 0 14px;
-      }
-    }
-  </style>
   <!-- SEO:start -->
-  <link rel="canonical" href="https://kukku.me/" />
+  <link rel="canonical" href="https://www.kukku.me/" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#1f6f78" />
-  <meta name="author" content="Kukku AI Solutions" />
+  <meta name="author" content="Ibhan AI Labs Pte Ltd" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Kukku AI Solutions" />
-  <meta property="og:title" content="Kukku AI Solutions - Company Profile" />
-  <meta property="og:description" content="Kukku AI Solutions builds private, on-device and on-premise AI: the Kukku personal AI app, on-premise voice agents, AI unified messaging, and applied AI for manufacturing, pharmaceuticals and financial services." />
-  <meta property="og:url" content="https://kukku.me/" />
-  <meta property="og:image" content="https://kukku.me/og-image.png" />
+  <meta property="og:site_name" content="Kukku" />
+  <meta property="og:title" content="Kukku — On-device AI Companion" />
+  <meta property="og:description" content="Kukku is your on-device personal AI for iOS — private agents for health &amp; fitness, nutrition, habits and expenses that reason and act, running locally on your device, not the cloud." />
+  <meta property="og:url" content="https://www.kukku.me/" />
+  <meta property="og:image" content="https://www.kukku.me/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kukku AI Solutions - Company Profile" />
-  <meta name="twitter:description" content="Kukku AI Solutions builds private, on-device and on-premise AI: the Kukku personal AI app, on-premise voice agents, AI unified messaging, and applied AI for manufacturing, pharmaceuticals and financial services." />
-  <meta name="twitter:image" content="https://kukku.me/og-image.png" />
+  <meta name="twitter:title" content="Kukku — On-device AI Companion" />
+  <meta name="twitter:description" content="Kukku is your on-device personal AI for iOS — private agents for health &amp; fitness, nutrition, habits and expenses that reason and act, running locally on your device, not the cloud." />
+  <meta name="twitter:image" content="https://www.kukku.me/og-image.png" />
   <!-- Icons -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -616,26 +44,36 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://kukku.me/#organization",
-        "name": "Kukku AI Solutions",
-        "url": "https://kukku.me/",
-        "logo": "https://kukku.me/icon-512.png",
-        "image": "https://kukku.me/og-image.png",
-        "description": "Kukku AI Solutions builds private, on-device and on-premise AI — the Kukku personal AI app, on-premise voice agents, AI unified messaging, and applied AI for manufacturing, pharmaceuticals and financial services.",
-        "email": "support@kukku.me",
-        "sameAs": []
+        "@id": "https://www.kukku.me/#organization",
+        "name": "Ibhan AI Labs Pte Ltd",
+        "url": "https://www.kukku.me/",
+        "logo": "https://www.kukku.me/icon-512.png",
+        "sameAs": ["https://www.linkedin.com/company/kukku-ai-solutions"]
       },
       {
         "@type": "WebSite",
-        "@id": "https://kukku.me/#website",
-        "url": "https://kukku.me/",
-        "name": "Kukku AI Solutions",
-        "publisher": { "@id": "https://kukku.me/#organization" }
+        "@id": "https://www.kukku.me/#website",
+        "url": "https://www.kukku.me/",
+        "name": "Kukku",
+        "publisher": { "@id": "https://www.kukku.me/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.kukku.me/#app",
+        "name": "Kukku Personal AI",
+        "operatingSystem": "iOS",
+        "applicationCategory": "ProductivityApplication",
+        "url": "https://www.kukku.me/",
+        "image": "https://www.kukku.me/og-image.png",
+        "description": "On-device personal AI for iOS — private agents for health & fitness, nutrition, habits and expenses, powered by Google Gemma 4.",
+        "downloadUrl": "https://apps.apple.com/sg/app/kukku-personal-ai/id6759591151",
+        "publisher": { "@id": "https://www.kukku.me/#organization" }
       }
     ]
   }
   </script>
 </head>
+
 <body>
   <div class="glow" aria-hidden="true"></div>
 
@@ -646,275 +84,434 @@
       </a>
     </div>
     <nav class="nav-links">
-      <a href="platform.html">Products</a>
-      <a href="solutions.html">Solutions</a>
+      <a href="index.html">Home</a>
+      <a href="#demo">Demo</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+        <div class="nav-item has-dropdown">
+          <a href="docs-user.html">Docs</a>
+          <div class="nav-dropdown">
+            <span class="nav-subtitle">Personal AI Kukku Me</span>
+            <a href="docs-user.html">User Guide</a>
+            <a href="docs-platform.html">Platform Guide</a>
+            <a href="docs-tools.html">Tools Guide</a>
+            <a href="docs-skills.html">Skills Guide</a>
+            <a href="docs-release.html">Release Roadmap</a>
+          </div>
+        </div>
       <a href="blog/">Blog</a>
-      <a class="nav-cta" href="#contact">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main class="profile-shell">
-    <section class="cp-hero">
-      <article class="cp-card cp-hero-card" data-reveal>
-        <div class="cp-hero-copy">
-          <p class="eyebrow">AI Solutions Company</p>
-          <h1 class="cp-rotator">
-            <span class="cp-rotator-word cp-roll"
-              data-words="AI solutions for secure teams|AI solutions for on-premise|AI solutions for private cloud|AI solutions for the edge">AI
-              solutions for secure teams</span>
-          </h1>
-          <p class="cp-lead">
-            We bridge the gap between AI potential and operational reality. From on-device edge intelligence to secure
-            private cloud deployments, we build, scale, and operationalize the AI your business needs.
-          </p>
-          <div class="cp-tags">
-            <span>AI Infrastructure</span>
-            <span>Workflow Modernization</span>
-            <span>AI Product Development</span>
-          </div>
-          <p class="cp-feed" aria-label="What we do">
-            <span class="cp-feed-star" aria-hidden="true">✦</span>
-            <span class="cp-feed-word cp-roll"
-              data-words="AI infrastructure for the future|Workflows reimagined|AI product innovation|Hybrid AI strategy — private, cloud &amp; frontier models tailored to your risk|Operationalizing intelligence">AI
-              infrastructure for the future</span>
-          </p>
-          <div class="cp-hero-cta">
-            <a class="button" href="solutions.html">Explore Solutions</a>
-            <a class="ghost" href="platform.html">Platform Stack</a>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section id="services" class="cp-block">
-      <div class="cp-sec-head" data-reveal>
-        <p class="eyebrow">What we do</p>
-        <h2>Services that turn AI into outcomes</h2>
-        <p>From product engineering to secure infrastructure and workflow modernization — delivered with security and
-          governance built in from day one.</p>
-      </div>
-      <div class="cp-services">
-      <article data-reveal data-delay="50">
-        <span class="cp-svc-icon" aria-hidden="true">🧩</span>
-        <h3>AI-Focused Product Development</h3>
-        <ul class="cp-bullets">
-          <li>Private on-device, edge, cloud &amp; data-center apps</li>
-          <li>Native mobile and desktop experiences</li>
-          <li>Agentic, tool-using user interfaces</li>
-          <li>Prototype through production delivery</li>
-        </ul>
-      </article>
-      <article data-reveal data-delay="110">
-        <span class="cp-svc-icon" aria-hidden="true">☁️</span>
-        <h3>AI Cloud Infrastructure Advisory</h3>
-        <ul class="cp-bullets">
-          <li>Secure model-serving architecture</li>
-          <li>Cost-aware scaling &amp; capacity planning</li>
-          <li>Enterprise-ready deployment patterns</li>
-          <li>Hybrid: private, cloud &amp; frontier models</li>
-        </ul>
-      </article>
-      <article data-reveal data-delay="170">
-        <span class="cp-svc-icon" aria-hidden="true">⚙️</span>
-        <h3>Modernization with AI Workflows</h3>
-        <ul class="cp-bullets">
-          <li>Automate legacy, manual processes</li>
-          <li>Practical automation with human-in-the-loop</li>
-          <li>Governance &amp; accountability controls</li>
-          <li>Measurable efficiency gains</li>
-        </ul>
-      </article>
-      </div>
-    </section>
-
-    <section class="cp-block">
-      <div class="cp-sec-head" data-reveal>
-        <p class="eyebrow">Our offerings</p>
-        <h2>Three ways we deliver services</h2>
-        <p>A growing family of AI products and platforms you can deploy today, tailored solutions built around your
-          industry, and advisory to help you get there.</p>
-      </div>
-      <div class="cp-offerings">
-        <a class="cp-offer" href="platform.html" data-reveal data-delay="60">
-          <span class="cp-offer-icon" aria-hidden="true">📦</span>
-          <h3>Products &amp; Platform</h3>
-          <p>Our family of AI-powered products and platforms — deployable on-device or fully on-premise. The Kukku app
-            is one of several.</p>
-          <span class="cp-offer-chips">
-            <span>Kukku AI App</span>
-            <span>Voice Agent</span>
-            <span>Unified Messaging</span>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">On-device. Private. Agentic</p>
+        <h1 class="rounded-title hero-title">
+          Meet Kukku — Personal AI for<br />
+          <span class="rotator" aria-hidden="true">
+            <span class="rotator-list">
+              <span>health &amp; fitness.</span>
+              <span>nutrition.</span>
+              <span>habits.</span>
+              <span>expenses.</span>
+              <span>everyday life.</span>
+              <span>health &amp; fitness.</span>
+            </span>
           </span>
-          <span class="cp-offer-link">Explore products →</span>
+          <span class="sr-only">health, nutrition, habits, expenses, and everyday life.</span>
+        </h1>
+        <p class="lede">
+          One private assistant that looks after the things you do every day — your fitness and well-being, meals and
+          nutrition, habits, and spending. Real AI that helps you connect, relate to and make sense of your everyday
+          life — running privately, on your device.
+        </p>
+        <ul class="domain-chips" aria-label="What Kukku helps with">
+          <li class="chip"><span class="emoji" aria-hidden="true">🧘</span> Health &amp; Fitness</li>
+          <li class="chip"><span class="emoji" aria-hidden="true">🥗</span> Nutrition</li>
+          <li class="chip"><span class="emoji" aria-hidden="true">🏃</span> Habits</li>
+          <li class="chip"><span class="emoji" aria-hidden="true">💰</span> Expenses</li>
+          <li class="chip"><span class="emoji" aria-hidden="true">🧭</span> Everyday</li>
+        </ul>
+        <div class="cta-row">
+          <a class="app-store-badge store-cta" href="https://apps.apple.com/sg/app/kukku-personal-ai/id6759591151" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M16.7 12.6c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.8-1.4-.2-2.7.8-3.4.8-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.8-.4 7 1.1 9.2.7 1.1 1.6 2.4 2.8 2.3 1.1 0 1.6-.7 3-.7 1.4 0 1.8.7 3 .7 1.2 0 2-1.1 2.7-2.2.8-1.3 1.2-2.6 1.2-2.7 0 0-2.3-.9-2.4-3.7Zm-2.9-6.8c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.7-1.1 1.7-1 2.6 1 0 2-.5 2.7-1.2Z" />
+            </svg>
+            <span class="badge-copy">
+              <span class="badge-top">Download on the</span>
+              <span class="badge-bottom">App Store</span>
+            </span>
+          </a>
+          <a class="ghost" href="#features">See features</a>
+        </div>
+        <div class="meta">
+          <span>Kukku Personal AI</span>
+          <span class="dot">•</span>
+          <span>On iOS — on-device AI powered by Google Gemma 4</span>
+        </div>
+        <a class="gemma-badge gemma-badge--link" href="#gemma" aria-label="Built with Google Gemma 4 — see how it runs on-device">
+          <span class="gemma-spark" aria-hidden="true">✦</span>
+          <span class="gemma-text">Built with <strong>Google Gemma&nbsp;4</strong> — running fully on-device</span>
+          <span class="gemma-badge-arrow" aria-hidden="true">↓</span>
         </a>
-        <a class="cp-offer" href="solutions.html" data-reveal data-delay="120">
-          <span class="cp-offer-icon" aria-hidden="true">🏭</span>
-          <h3>Industry Solutions</h3>
-          <p>Applied AI tailored to your sector, shaped around real workflows and compliance needs.</p>
-          <span class="cp-offer-chips">
-            <span>Manufacturing</span>
-            <span>Pharmaceuticals</span>
-            <span>Financial Services</span>
-          </span>
-          <span class="cp-offer-link">Explore Solutions →</span>
-        </a>
-        <a class="cp-offer" href="#contact" data-reveal data-delay="180">
-          <span class="cp-offer-icon" aria-hidden="true">🧭</span>
-          <h3>AI Advisory</h3>
-          <p>Architecture and strategy guidance to deploy AI securely and cost-effectively.</p>
-          <ul class="cp-bullets">
-            <li>Secure model-serving architecture</li>
-            <li>Cost-aware scaling &amp; capacity planning</li>
-            <li>Enterprise-ready deployment patterns</li>
-            <li>Hybrid: private, cloud &amp; frontier models</li>
-          </ul>
-          <span class="cp-offer-link">Talk to us →</span>
-        </a>
+      </div>
+
+      <div class="hero-card" aria-hidden="true">
+        <div class="card-header">
+          <div class="pill">Kukku App screenshots</div>
+          <div class="status">Local model</div>
+        </div>
+        <div class="card-body prototype">
+          <div class="magazine-carousel" aria-label="Kukku prototype screenshots">
+            <div class="magazine-track">
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Your whole day, one glance</h4>
+                  <p>A home screen that reads across meals, habits, money and movement — all on-device.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/01-homedashboard.PNG" alt="Kukku home dashboard showing the day at a glance" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Kukku Smart View</h4>
+                  <p>Kukku reads your day and connects the dots into a plain-English summary.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/02-smartview.PNG" alt="Kukku Smart View summarizing the day" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Agents for every part of life</h4>
+                  <p>8 ready-to-use agents with 12+ tools and skills, from habits to health.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/03-agent.PNG" alt="Kukku agent dashboard" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Snap a receipt</h4>
+                  <p>Point your camera and the expense is logged with amount, category and merchant.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/04-receiptscan.png" alt="Kukku scanning a receipt to log an expense" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Snap a meal</h4>
+                  <p>Get an estimated calorie count with a full macro breakdown — no forms, no typing.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/05-viewnutrition.png" alt="Kukku estimating calories and macros from a meal photo" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Create your own agent</h4>
+                  <p>Type a topic and Kukku sets up an agent for it in four simple steps.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/06-topic.png" alt="Kukku creating an agent from a topic" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Give your agent real tools</h4>
+                  <p>Attach calendar, contacts, mail, messaging, health data and more.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/07-topic.png" alt="Kukku attaching tools and skills to an agent" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Turn habits into streaks</h4>
+                  <p>Track completion and daily nudges in today, weekly and monthly journals.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/08-habitjournal.png" alt="Kukku habit journal with streaks" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>See where your money goes</h4>
+                  <p>Budgets, categories and spending trends, kept private on your device.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/09-expense.png" alt="Kukku expense journal" />
+                </div>
+              </article>
+              <article class="magazine-shot">
+                <div class="magazine-note">
+                  <h4>Evening check-in</h4>
+                  <p>The Reflection card closes the loop with a gentle wind-down at night.</p>
+                </div>
+                <div class="magazine-image">
+                  <img src="shots-v2-raw/10-reflection.png" alt="Kukku evening reflection card" />
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="metrics">
+            <div>
+              <p>Privacy</p>
+              <h3>On-device</h3>
+            </div>
+            <div>
+              <p>Tools &amp; Skills</p>
+              <h3>12+</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="approach" class="cp-block">
-      <div class="cp-sec-head" data-reveal>
-        <p class="eyebrow">How we work</p>
-        <h2>A clear path from idea to production</h2>
-        <p>A pragmatic, three-stage method that de-risks delivery and industrializes what works.</p>
+    <section id="demo" class="section showcase">
+      <div class="showcase-copy">
+        <p class="eyebrow">See it in action</p>
+        <h2 class="rounded-title">Kukku, in about 40 seconds.</h2>
+        <p class="lede">
+          Watch the new Home Dashboard, ready-to-use agents, camera capture and Journals come together —
+          a personal AI that runs on your device.
+        </p>
+        <div class="cta-row">
+          <a class="app-store-badge store-cta" href="https://apps.apple.com/sg/app/kukku-personal-ai/id6759591151" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M16.7 12.6c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.8-1.4-.2-2.7.8-3.4.8-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.8-.4 7 1.1 9.2.7 1.1 1.6 2.4 2.8 2.3 1.1 0 1.6-.7 3-.7 1.4 0 1.8.7 3 .7 1.2 0 2-1.1 2.7-2.2.8-1.3 1.2-2.6 1.2-2.7 0 0-2.3-.9-2.4-3.7Zm-2.9-6.8c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.7-1.1 1.7-1 2.6 1 0 2-.5 2.7-1.2Z" />
+            </svg>
+            <span class="badge-copy">
+              <span class="badge-top">Download on the</span>
+              <span class="badge-bottom">App Store</span>
+            </span>
+          </a>
+        </div>
       </div>
-      <div class="cp-process">
-      <article data-reveal data-delay="60">
-        <div class="cp-step-head">
-          <span class="cp-step-num">01</span>
-          <span class="cp-phase">Strategy</span>
+      <div class="showcase-phone">
+        <div class="phone-frame">
+          <video
+            playsinline
+            muted
+            loop
+            autoplay
+            controls
+            preload="metadata"
+            poster="media/kukku-showcase-poster.jpg"
+            aria-label="Kukku app showcase video">
+            <source src="media/kukku-showcase.webm" type="video/webm" />
+            <source src="media/kukku-showcase.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
-        <h3>Assess and Design</h3>
-        <ul class="cp-bullets">
-          <li>Map current systems &amp; data</li>
-          <li>Identify high-value AI opportunities</li>
-          <li>Define target architecture</li>
-          <li>Realistic, risk-aware roadmap</li>
-        </ul>
-      </article>
-      <article data-reveal data-delay="120">
-        <div class="cp-step-head">
-          <span class="cp-step-num">02</span>
-          <span class="cp-phase">Pilot Delivery</span>
-        </div>
-        <h3>Pilot and Validate</h3>
-        <ul class="cp-bullets">
-          <li>Focused, time-boxed pilots</li>
-          <li>Clear quality &amp; security metrics</li>
-          <li>Adoption &amp; value validation</li>
-          <li>Go / no-go before rollout</li>
-        </ul>
-      </article>
-      <article data-reveal data-delay="180">
-        <div class="cp-step-head">
-          <span class="cp-step-num">03</span>
-          <span class="cp-phase">Scale Operations</span>
-        </div>
-        <h3>Scale and Govern</h3>
-        <ul class="cp-bullets">
-          <li>Industrialize data &amp; model pipelines</li>
-          <li>Monitoring &amp; lifecycle controls</li>
-          <li>Operating playbooks for teams</li>
-          <li>Governance &amp; accountability</li>
-        </ul>
-      </article>
+        <p class="showcase-note">Tap for sound · plays muted by default</p>
       </div>
     </section>
 
-    <section class="cp-block">
-      <div class="cp-sec-head" data-reveal>
-        <p class="eyebrow">Why Kukku</p>
-        <h2>What sets our delivery apart</h2>
+    <section id="features" class="section">
+      <div class="section-title">
+        <p class="eyebrow">Meet your agents</p>
+        <h2>Ready-made agents for real life.</h2>
+        <p class="lede">Kukku ships with pre-seeded agents for the parts of life you deal with every day — each one powered by
+          its own tools or skills, all running privately on your device. Prefer your own? Build a custom agent on any topic
+          in a few steps.</p>
       </div>
-      <div class="cp-values">
-      <article data-reveal data-delay="70">
-        <h3>Trust by Design</h3>
-        <p>Security, privacy, and model accountability are built into architecture decisions from day one.</p>
-      </article>
-      <article data-reveal data-delay="130">
-        <h3>Execution over Slides</h3>
-        <p>We prioritize implementation and measurable impact instead of abstract recommendations.</p>
-      </article>
-      <article data-reveal data-delay="190">
-        <h3>Engineering Partnership</h3>
-        <p>We work directly with your teams to transfer capability and establish long-term delivery discipline.</p>
-      </article>
+      <div class="agent-grid">
+        <article class="agent-card">
+          <span class="agent-emoji" aria-hidden="true">🧘</span>
+          <h3>Health &amp; Fitness</h3>
+          <p>Reads Apple Health — steps, resting heart rate, sleep and workouts — into a simple daily activity view.</p>
+        </article>
+        <article class="agent-card">
+          <span class="agent-emoji" aria-hidden="true">🥗</span>
+          <h3>Food &amp; Health</h3>
+          <p>Snap a meal to log calories and macros, track against a daily budget, and keep a running nutrition journal.</p>
+        </article>
+        <article class="agent-card">
+          <span class="agent-emoji" aria-hidden="true">🏃</span>
+          <h3>Habit Tracker <span class="agent-tag">Skill</span></h3>
+          <p>Build routines, mark daily completion and keep streaks alive with gentle, on-device nudges.</p>
+        </article>
+        <article class="agent-card">
+          <span class="agent-emoji" aria-hidden="true">💰</span>
+          <h3>Expense Tracker <span class="agent-tag">Skill</span></h3>
+          <p>Log spending by voice or text, scan receipts with the camera, set budgets and see where the money goes.</p>
+        </article>
+        <article class="agent-card">
+          <span class="agent-emoji" aria-hidden="true">🧭</span>
+          <h3>Everyday Agent</h3>
+          <p>Calendar appointments, reminders and quick tasks — the small things across your day, handled by asking.</p>
+        </article>
+        <article class="agent-card">
+          <span class="agent-emoji" aria-hidden="true">🖼️</span>
+          <h3>Image Analyzer</h3>
+          <p>Read the text in a photo, describe a scene, or answer questions about any image you share.</p>
+        </article>
+        <article class="agent-card">
+          <span class="agent-emoji" aria-hidden="true">📚</span>
+          <h3>Knowledge Base</h3>
+          <p>Ask questions across your own PDFs, images and notes — grounded answers from documents you provide.</p>
+        </article>
+        <article class="agent-card agent-card--build">
+          <span class="agent-emoji" aria-hidden="true">➕</span>
+          <h3>Build your own</h3>
+          <p>Create a custom agent on any topic with a guided setup, then assign the tools or a skill it needs.</p>
+        </article>
+      </div>
+
+      <div class="section-title section-title--sub">
+        <p class="eyebrow">What powers them</p>
+        <h2>Designed for quiet power.</h2>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <h3>Tools &amp; skills</h3>
+          <p>Chain actions in one prompt — search, calendar, reminders, messages and more — or attach a skill like Habit
+            and Expense tracking. Tools and skills stay per-agent, so each one does its job well.</p>
+        </article>
+        <article>
+          <h3>Context aware chat</h3>
+          <p>Bring in documents, photos, Apple Health and structured knowledge while keeping the interface minimal.</p>
+        </article>
+        <article>
+          <h3>Local-first privacy</h3>
+          <p>Inference runs on your device with a local model. Reach a more powerful remote model only with your consent
+            and your own API key.</p>
+        </article>
+        <article>
+          <h3>Lightning fast UI</h3>
+          <p>Native SwiftUI layout with emoji icons rendered on Metal, tuned for Apple Silicon performance.</p>
+        </article>
       </div>
     </section>
 
-    <section id="contact" class="cp-cta" data-reveal data-delay="90">
+    <section id="gemma" class="section gemma-proof">
+      <div class="gemma-proof-media">
+        <img src="gemma4-download.png"
+          alt="Kukku app onboarding screen showing the Google Gemma 4 E2B model (2.4 GB) ready to download for on-device, offline use" />
+      </div>
+      <div class="gemma-proof-copy">
+        <div class="gemma-badge" role="note" aria-label="Built with Google Gemma 4">
+          <span class="gemma-spark" aria-hidden="true">✦</span>
+          <span class="gemma-text">Built with <strong>Google Gemma&nbsp;4</strong></span>
+        </div>
+        <h2>Your AI model, right on your device.</h2>
+        <ul class="gemma-proof-points">
+          <li><strong>Fast by design.</strong> Kukku blends Google Gemma 4 with a fast rules-and-heuristics layer — each used where it's best, balancing speed and usability.</li>
+          <li><strong>Escalate when you need more.</strong> Switch to a more powerful Gemma 4 running on your own laptop or private environment — your data still stays inside your walls.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="how" class="section split">
       <div>
-        <p class="eyebrow">Work With Us</p>
-        <h3>Planning an AI initiative this quarter?</h3>
-        <p class="cp-lead">Let's scope a focused pilot and define a production path your team can execute confidently.</p>
-        <div class="cp-socials">
-          <a href="https://x.com/Parmarsg" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-7.4L5.6 22H2.5l7.3-8.4L1.7 2H8l4.4 6.8L18.9 2Zm-1.1 18h1.7L7 3.9H5.2L17.8 20Z" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/prakash-parmar-b9230578" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M6.94 8.5H3.56V19.5h3.38V8.5ZM5.25 3a1.96 1.96 0 1 0 0 3.92A1.96 1.96 0 0 0 5.25 3Zm5.1 5.5H7.03V19.5h3.32v-5.78c0-1.52.29-3 2.17-3 1.86 0 1.88 1.74 1.88 3.1v5.68h3.33v-6.36c0-3.13-.67-5.54-4.33-5.54-1.76 0-2.94.97-3.42 1.88h-.05V8.5Z" />
-            </svg>
-          </a>
+        <p class="eyebrow">How it works</p>
+        <h2>Thoughtful steps from prompt to action.</h2>
+        <p class="lede">
+          Kukku orchestrates tools and skills behind the scenes — you describe the intent, Kukku handles the sequence.
+        </p>
+        <ul class="steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h4>Start from the Home Dashboard</h4>
+              <p>Your day at a glance — the Kukku Smart card, quick actions, and your circle of agents. Pick a pre-seeded
+                agent or open the grid to see them all.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h4>Build a custom agent in a few steps</h4>
+              <p>Give it a topic, then assign the tools or a skill it needs. Tools and skills are mutually exclusive per
+                agent, so each one stays focused and reliable.</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h4>Ask in plain language and make things happen</h4>
+              <p>Kukku interprets the task and picks the right tools or skill to act — logging a meal or expense, setting a
+                reminder, scanning a receipt, or sending a message.</p>
+            </div>
+          </li>
+          <li>
+            <span>04</span>
+            <div>
+              <h4>See your day summarized privately</h4>
+              <p>Health metrics, nutrition, habits and spending are turned into clear cards and Journals — today, weekly
+                and monthly — presented in a private, secure view.</p>
+            </div>
+          </li>
+          <li>
+            <span>05</span>
+            <div>
+              <h4>Talk to your private documents</h4>
+              <p>Add PDFs, images and notes to the Knowledge Base and ask grounded questions across them, all on-device.</p>
+            </div>
+          </li>
+          <li>
+            <span>06</span>
+            <div>
+              <h4>Team up and reach further when you choose</h4>
+              <p>Combine agents into a Team, escalate to a more powerful remote model with your own API key and consent,
+                or add an experimental MCP server for extra tools.</p>
+            </div>
+          </li>
+          <li>
+            <span>07</span>
+            <div>
+              <h4>Connect with nearby Kukku Agents &amp; Bots (OpenClaw-compatible)</h4>
+              <p>Securely discover and pair with nearby Kukku Agents and Bots for collaboration in a Team — or just to
+                gossip for fun.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="stats">
+        <div>
+          <h3>3X</h3>
+          <p>Faster capture to action</p>
+        </div>
+        <div>
+          <h3>99%</h3>
+          <p>Runs offline</p>
+        </div>
+        <div>
+          <h3>0</h3>
+          <p>Data brokers</p>
         </div>
       </div>
-      <a class="button" href="mailto:support@kukku.me">Contact Kukku AI Solutions</a>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Talk to the Kukku team.</h2>
+        <p class="lede">For partnerships, product questions, or support, reach out directly by email.</p>
+      </div>
+      <div class="contact-card">
+        <p>Email us and we will get back to you.</p>
+        <a class="button" href="mailto:support@kukku.me">support@kukku.me</a>
+        <a class="ghost store-cta-ghost" href="https://apps.apple.com/sg/app/kukku-personal-ai/id6759591151" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M16.7 12.6c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.8-1.4-.2-2.7.8-3.4.8-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.8-.4 7 1.1 9.2.7 1.1 1.6 2.4 2.8 2.3 1.1 0 1.6-.7 3-.7 1.4 0 1.8.7 3 .7 1.2 0 2-1.1 2.7-2.2.8-1.3 1.2-2.6 1.2-2.7 0 0-2.3-.9-2.4-3.7Zm-2.9-6.8c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.7-1.1 1.7-1 2.6 1 0 2-.5 2.7-1.2Z" />
+          </svg>
+          <span>View on App Store</span>
+        </a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Kukku AI Solutions. · <a href="blog/">Blog</a> · <a href="index.html">Back to Home</a></p>
+    <p>© 2026 Ibhan AI Labs Pte Ltd. · <a href="blog/">Blog</a> · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></p>
   </footer>
-
-  <script>
-    const elements = document.querySelectorAll("[data-reveal]");
-    const rollers = document.querySelectorAll("[data-words]");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const setVisible = (el) => {
-      const delay = Number(el.dataset.delay || "0");
-      if (delay) {
-        el.style.transitionDelay = `${delay}ms`;
-      }
-      el.classList.add("visible");
-    };
-
-    if (!reduceMotion && "IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(entry.target);
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
-
-      elements.forEach((el) => revealObserver.observe(el));
-    } else {
-      elements.forEach((el) => setVisible(el));
-    }
-
-    if (!reduceMotion) {
-      rollers.forEach((el, idx) => {
-        const words = (el.dataset.words || "")
-          .split("|")
-          .map((word) => word.trim())
-          .filter(Boolean);
-        if (words.length < 2) return;
-        let wordIndex = 0;
-        window.setInterval(() => {
-          el.classList.add("is-changing");
-          window.setTimeout(() => {
-            wordIndex = (wordIndex + 1) % words.length;
-            el.textContent = words[wordIndex];
-            el.classList.remove("is-changing");
-          }, 240);
-        }, 2600 + idx * 400);
-      });
-    }
-  </script>
 </body>
+
 </html>

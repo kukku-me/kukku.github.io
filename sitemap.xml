@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kukku.me/</loc><lastmod>2026-08-16</lastmod><priority>1.0</priority></url>
-  <url><loc>https://kukku.me/intro.html</loc><lastmod>2026-08-16</lastmod><priority>0.9</priority></url>
-  <url><loc>https://kukku.me/blog/</loc><lastmod>2026-08-17</lastmod><priority>0.7</priority></url>
-  <url><loc>https://kukku.me/blog/2026-08-17-gemma-on-device.html</loc><lastmod>2026-08-17</lastmod><priority>0.7</priority></url>
-  <url><loc>https://kukku.me/platform.html</loc><lastmod>2026-08-16</lastmod><priority>0.9</priority></url>
-  <url><loc>https://kukku.me/voice.html</loc><lastmod>2026-08-16</lastmod><priority>0.8</priority></url>
-  <url><loc>https://kukku.me/messaging.html</loc><lastmod>2026-08-16</lastmod><priority>0.8</priority></url>
-  <url><loc>https://kukku.me/solutions.html</loc><lastmod>2026-08-16</lastmod><priority>0.8</priority></url>
-  <url><loc>https://kukku.me/docs-user.html</loc><lastmod>2026-08-16</lastmod><priority>0.6</priority></url>
-  <url><loc>https://kukku.me/docs-platform.html</loc><lastmod>2026-08-16</lastmod><priority>0.6</priority></url>
-  <url><loc>https://kukku.me/docs-tools.html</loc><lastmod>2026-08-16</lastmod><priority>0.6</priority></url>
-  <url><loc>https://kukku.me/docs-skills.html</loc><lastmod>2026-08-16</lastmod><priority>0.6</priority></url>
-  <url><loc>https://kukku.me/docs-release.html</loc><lastmod>2026-08-16</lastmod><priority>0.6</priority></url>
-  <url><loc>https://kukku.me/privacy.html</loc><lastmod>2026-08-16</lastmod><priority>0.4</priority></url>
-  <url><loc>https://kukku.me/support.html</loc><lastmod>2026-08-16</lastmod><priority>0.4</priority></url>
+  <url><loc>https://www.kukku.me/</loc><lastmod>2026-09-01</lastmod><priority>1.0</priority></url>
+  <url><loc>https://www.kukku.me/docs-user.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.kukku.me/docs-platform.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.kukku.me/docs-tools.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.kukku.me/docs-skills.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.kukku.me/docs-release.html</loc><lastmod>2026-09-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.kukku.me/blog/</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.kukku.me/blog/2026-08-17-gemma-on-device.html</loc><lastmod>2026-09-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.kukku.me/blog/2026-03-14-private-agent-patterns.html</loc><lastmod>2026-09-01</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.kukku.me/blog/2026-03-07-ai-on-edge.html</loc><lastmod>2026-09-01</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.kukku.me/privacy.html</loc><lastmod>2026-09-01</lastmod><priority>0.4</priority></url>
+  <url><loc>https://www.kukku.me/support.html</loc><lastmod>2026-09-01</lastmod><priority>0.4</priority></url>
 </urlset>
