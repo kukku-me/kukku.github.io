@@ -39,10 +39,11 @@
   <body>
     <header class="nav">
       <div class="brand">
-        <a href="index.html" aria-label="Kukku home">
-          <img class="brand-icon" src="KukkuIcon.png" alt="Kukku" />
+        <a href="index.html" aria-label="Kukku Personal AI home">
+          <img class="brand-icon" src="being-icon.png" alt="Kukku" /><span class="brand-name">Kukku Personal AI</span>
         </a>
       </div>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <div class="nav-item has-dropdown">
@@ -58,6 +59,7 @@
         </div>
         <a href="blog/">Blog</a>
         <a href="privacy.html">Privacy</a>
+      <a class="nav-cta" href="https://apps.apple.com/sg/app/kukku-personal-ai/id6759591151" target="_blank" rel="noopener noreferrer">Get the app</a>
       </nav>
     </header>
 
@@ -96,5 +98,8 @@
     <footer>
       <p>© 2026 Ibhan AI Labs Pte Ltd. · <a href="blog/">Blog</a></p>
     </footer>
-  </body>
+    <script>
+    (function(){var n=document.querySelector(".nav");if(!n)return;var b=n.querySelector(".nav-toggle"),l=n.querySelector(".nav-links");if(!b||!l)return;b.addEventListener("click",function(){var o=n.classList.toggle("nav-open");b.setAttribute("aria-expanded",o?"true":"false");});l.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("nav-open");b.setAttribute("aria-expanded","false");});});})();
+  </script>
+</body>
 </html>
