@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Kukku is your on-device personal AI for iOS — private agents for health &amp; fitness, nutrition, habits and expenses that reason and act, running locally on your device, not the cloud." />
-  <title>Kukku — On-device AI Companion</title>
+  <title>Kukku — Private On-Device Personal AI for iPhone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -20,7 +20,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kukku" />
-  <meta property="og:title" content="Kukku — On-device AI Companion" />
+  <meta property="og:title" content="Kukku — Private On-Device Personal AI for iPhone" />
   <meta property="og:description" content="Kukku is your on-device personal AI for iOS — private agents for health &amp; fitness, nutrition, habits and expenses that reason and act, running locally on your device, not the cloud." />
   <meta property="og:url" content="https://www.kukku.me/" />
   <meta property="og:image" content="https://www.kukku.me/og-image.png" />
@@ -28,7 +28,7 @@
   <meta property="og:image:height" content="630" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kukku — On-device AI Companion" />
+  <meta name="twitter:title" content="Kukku — Private On-Device Personal AI for iPhone" />
   <meta name="twitter:description" content="Kukku is your on-device personal AI for iOS — private agents for health &amp; fitness, nutrition, habits and expenses that reason and act, running locally on your device, not the cloud." />
   <meta name="twitter:image" content="https://www.kukku.me/og-image.png" />
   <!-- Icons -->
@@ -46,7 +46,7 @@
         "@type": "Organization",
         "@id": "https://www.kukku.me/#organization",
         "name": "Ibhan AI Labs Pte Ltd",
-        "url": "https://www.kukku.me/",
+        "url": "https://www.ibhanai.com",
         "logo": "https://www.kukku.me/icon-512.png",
         "sameAs": ["https://www.linkedin.com/company/kukku-ai-solutions"]
       },
@@ -79,10 +79,11 @@
 
   <header class="nav">
     <div class="brand">
-      <a href="index.html" aria-label="Kukku home">
-        <img class="brand-icon" src="KukkuIcon.png" alt="Kukku" />
+      <a href="index.html" aria-label="Kukku Personal AI home">
+        <img class="brand-icon" src="being-icon.png" alt="Kukku" /><span class="brand-name">Kukku Personal AI</span>
       </a>
     </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="#demo">Demo</a>
@@ -100,9 +101,11 @@
           </div>
         </div>
       <a href="blog/">Blog</a>
+      <a href="#faq">FAQ</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
       <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://apps.apple.com/sg/app/kukku-personal-ai/id6759591151" target="_blank" rel="noopener noreferrer">Get the app</a>
     </nav>
   </header>
 
@@ -125,15 +128,14 @@
           <span class="sr-only">health, nutrition, habits, expenses, and everyday life.</span>
         </h1>
         <p class="lede">
-          One private assistant that looks after the things you do every day — your fitness and well-being, meals and
-          nutrition, habits, and spending. Real AI that helps you connect, relate to and make sense of your everyday
-          life — running privately, on your device.
+          One agentic personal AI that ties your whole day together — movement, meals, habits and spending — into a
+          single Smart Card, then helps you unwind at night. Private and on-device, powered by Google Gemma 4.
         </p>
         <ul class="domain-chips" aria-label="What Kukku helps with">
-          <li class="chip"><span class="emoji" aria-hidden="true">🧘</span> Health &amp; Fitness</li>
-          <li class="chip"><span class="emoji" aria-hidden="true">🥗</span> Nutrition</li>
-          <li class="chip"><span class="emoji" aria-hidden="true">🏃</span> Habits</li>
-          <li class="chip"><span class="emoji" aria-hidden="true">💰</span> Expenses</li>
+          <li class="chip"><a href="#agent-health"><span class="emoji" aria-hidden="true">🧘</span> Health &amp; Fitness</a></li>
+          <li class="chip"><a href="#agent-food"><span class="emoji" aria-hidden="true">🥗</span> Nutrition</a></li>
+          <li class="chip"><a href="#agent-habits"><span class="emoji" aria-hidden="true">🏃</span> Habits</a></li>
+          <li class="chip"><a href="#agent-expenses"><span class="emoji" aria-hidden="true">💰</span> Expenses</a></li>
           <li class="chip"><span class="emoji" aria-hidden="true">🧭</span> Everyday</li>
         </ul>
         <div class="cta-row">
@@ -147,6 +149,10 @@
             </span>
           </a>
           <a class="ghost" href="#features">See features</a>
+        </div>
+        <div class="qr-download">
+          <img src="app-qr.png" alt="Scan to download Kukku Personal AI on the App Store" width="112" height="112" />
+          <span>Point your iPhone camera here to<br /><strong>download Kukku</strong> from the App Store.</span>
         </div>
         <div class="meta">
           <span>Kukku Personal AI</span>
@@ -323,26 +329,26 @@
           in a few steps.</p>
       </div>
       <div class="agent-grid">
-        <article class="agent-card">
+        <a class="agent-card" href="#agent-health">
           <span class="agent-emoji" aria-hidden="true">🧘</span>
           <h3>Health &amp; Fitness</h3>
           <p>Reads Apple Health — steps, resting heart rate, sleep and workouts — into a simple daily activity view.</p>
-        </article>
-        <article class="agent-card">
+        </a>
+        <a class="agent-card" href="#agent-food">
           <span class="agent-emoji" aria-hidden="true">🥗</span>
           <h3>Food &amp; Health</h3>
           <p>Snap a meal to log calories and macros, track against a daily budget, and keep a running nutrition journal.</p>
-        </article>
-        <article class="agent-card">
+        </a>
+        <a class="agent-card" href="#agent-habits">
           <span class="agent-emoji" aria-hidden="true">🏃</span>
           <h3>Habit Tracker <span class="agent-tag">Skill</span></h3>
           <p>Build routines, mark daily completion and keep streaks alive with gentle, on-device nudges.</p>
-        </article>
-        <article class="agent-card">
+        </a>
+        <a class="agent-card" href="#agent-expenses">
           <span class="agent-emoji" aria-hidden="true">💰</span>
           <h3>Expense Tracker <span class="agent-tag">Skill</span></h3>
           <p>Log spending by voice or text, scan receipts with the camera, set budgets and see where the money goes.</p>
-        </article>
+        </a>
         <article class="agent-card">
           <span class="agent-emoji" aria-hidden="true">🧭</span>
           <h3>Everyday Agent</h3>
@@ -391,11 +397,131 @@
       </div>
     </section>
 
-    <section id="gemma" class="section gemma-proof">
-      <div class="gemma-proof-media">
-        <img src="gemma4-download.png"
-          alt="Kukku app onboarding screen showing the Google Gemma 4 E2B model (2.4 GB) ready to download for on-device, offline use" />
+    <section id="smartcard" class="section life-split">
+      <div class="life-copy">
+        <p class="eyebrow">One day, one card</p>
+        <h2>Your whole life, related in a single Smart Card.</h2>
+        <p>Movement, food, habits and money don't live in separate apps. Kukku's Smart Card reads across all of them and
+          gives you one plain-English read of your day — and a gentle nudge for what to do next.</p>
+        <ul class="life-points">
+          <li>Movement, food, habits &amp; money, together in one place</li>
+          <li><strong>Kukku's read</strong> connects the dots across your day</li>
+          <li>A calm suggestion for your next best action</li>
+        </ul>
       </div>
+      <div class="life-media">
+        <img src="smartcard.jpg" width="600" height="1301" loading="lazy"
+          alt="Kukku Smart Card summarising movement, food, habits and money with Kukku's plain-English read of the day" />
+      </div>
+    </section>
+
+    <section class="section see-intro">
+      <div class="section-title">
+        <p class="eyebrow">See each agent in action</p>
+        <h2>Watch Kukku work.</h2>
+        <p>Each agent looks after one part of your day — privately, on your device.</p>
+      </div>
+    </section>
+
+    <section id="agent-health" class="section life-split">
+      <div class="life-copy">
+        <p class="eyebrow">🧘 Health &amp; Fitness</p>
+        <h2>Your body's signals, in context.</h2>
+        <p>Kukku reads your Apple Health — steps, active energy, sleep — and folds it into the bigger picture, so
+          movement and rest make sense alongside your meals, habits and mood.</p>
+        <ul class="life-points">
+          <li>Syncs steps, sleep and active energy from Apple Health</li>
+          <li>Sees how rest and movement shape your day</li>
+          <li>Your health data never leaves the device</li>
+        </ul>
+        <p class="life-ground">📄 Ground it: upload a <a href="docs/sample-advisory/physician-post-discharge-activity.txt" download>physician's post-discharge note</a> and Kukku keeps activity within safe limits — <a href="docs-user.html#influence">see how</a>.</p>
+      </div>
+      <div class="life-media">
+        <video controls playsinline preload="none" poster="media/agents/health.jpg">
+          <source src="media/agents/health.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <section id="agent-food" class="section life-split reverse">
+      <div class="life-media">
+        <video controls playsinline preload="none" poster="media/agents/food.jpg">
+          <source src="media/agents/food.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="life-copy">
+        <p class="eyebrow">🥗 Food &amp; Nutrition</p>
+        <h2>Snap a meal. Know what's in it.</h2>
+        <p>Photograph what you eat and Kukku estimates calories and macros, logs it, and coaches you toward your own
+          goals — a nutrition analyst in your pocket.</p>
+        <ul class="life-points">
+          <li>Photo → calories &amp; macros, logged for you</li>
+          <li>Guidance shaped by your own nutrition goals</li>
+          <li>Estimates for awareness, not medical advice</li>
+        </ul>
+        <p class="life-ground">📄 Ground it: upload a <a href="docs/sample-advisory/dietician-nutrition-plan.txt" download>dietician's nutrition plan</a> to shape its advice — <a href="docs-user.html#influence">see how</a>.</p>
+      </div>
+    </section>
+
+    <section id="agent-habits" class="section life-split">
+      <div class="life-copy">
+        <p class="eyebrow">🏃 Habits</p>
+        <h2>Build streaks that actually stick.</h2>
+        <p>Kukku tracks the habits that matter, celebrates the wins, and nudges the next one — gently. Progress over
+          perfection, every single day.</p>
+        <ul class="life-points">
+          <li>Track daily habits and watch streaks grow</li>
+          <li>Warm nudges, never nagging</li>
+          <li>"Never miss twice" beats chasing perfect</li>
+        </ul>
+        <p class="life-ground">📄 Ground it: upload a <a href="docs/sample-advisory/wellness-coach-habit-plan.txt" download>wellness coach's habit plan</a> and Kukku coaches in that voice — <a href="docs-user.html#influence">see how</a>.</p>
+      </div>
+      <div class="life-media">
+        <video controls playsinline preload="none" poster="media/agents/habit.jpg">
+          <source src="media/agents/habit.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <section id="agent-expenses" class="section life-split reverse">
+      <div class="life-media">
+        <video controls playsinline preload="none" poster="media/agents/expense.jpg">
+          <source src="media/agents/expense.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="life-copy">
+        <p class="eyebrow">💰 Expenses</p>
+        <h2>Snap a receipt. It's logged.</h2>
+        <p>No spreadsheets. Photograph a receipt and Kukku captures the amount, category and merchant — so you always
+          know where your money goes.</p>
+        <ul class="life-points">
+          <li>Receipt photo → amount, category, merchant</li>
+          <li>See your spending patterns at a glance</li>
+          <li>All on-device, always private</li>
+        </ul>
+        <p class="life-ground">📄 Ground it: upload a <a href="docs/sample-advisory/financial-advisor-budget-note.txt" download>financial advisor's budget note</a> to guide its nudges — <a href="docs-user.html#influence">see how</a>.</p>
+      </div>
+    </section>
+
+    <section id="winddown" class="section life-split reverse">
+      <div class="life-media">
+        <img src="reflection.jpg" width="600" height="1301" loading="lazy"
+          alt="Kukku evening reflection: the app shifts to a warm night theme with a cosy check-in chat and the day's mood arc" />
+      </div>
+      <div class="life-copy">
+        <p class="eyebrow">Nightly wind-down</p>
+        <h2>End the day with a calm, cosy check-in.</h2>
+        <p>As evening comes, Kukku eases into a warm night theme and opens a gentle reflection — a short, cosy chat to help
+          you unwind, notice the day's arc, and rest easy. Private, on your device.</p>
+        <ul class="life-points">
+          <li>The whole app settles into a warm evening palette</li>
+          <li>A short, reflective chat to decompress before bed</li>
+          <li><strong>Today's arc</strong> — your mood from morning to night</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="gemma" class="section gemma-proof">
       <div class="gemma-proof-copy">
         <div class="gemma-badge" role="note" aria-label="Built with Google Gemma 4">
           <span class="gemma-spark" aria-hidden="true">✦</span>
@@ -406,6 +532,10 @@
           <li><strong>Fast by design.</strong> Kukku blends Google Gemma 4 with a fast rules-and-heuristics layer — each used where it's best, balancing speed and usability.</li>
           <li><strong>Escalate when you need more.</strong> Switch to a more powerful Gemma 4 running on your own laptop or private environment — your data still stays inside your walls.</li>
         </ul>
+      </div>
+      <div class="gemma-proof-media">
+        <img src="gemma4-download.png"
+          alt="Kukku app onboarding screen showing the Google Gemma 4 E2B model (2.4 GB) ready to download for on-device, offline use" />
       </div>
     </section>
 
@@ -490,6 +620,52 @@
       </div>
     </section>
 
+    <section id="faq" class="section">
+      <div class="section-title">
+        <p class="eyebrow">FAQ</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is Kukku really private?</summary>
+          <p>Yes. Kukku runs its AI on your device and does not collect your data — your meals, money, habits and health stay on your iPhone.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does Kukku work offline?</summary>
+          <p>Yes. The on-device model keeps working without a connection — put your iPhone in airplane mode and Kukku still answers.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What AI model does Kukku use?</summary>
+          <p>Kukku runs Google Gemma 4 locally on your iPhone, with optional escalation to a more powerful model using your own key.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What can Kukku do?</summary>
+          <p>Ready-made agents for health &amp; fitness, nutrition, habits and expenses — plus custom agents. Snap a receipt or a meal, track habits, and get a daily Smart Card that ties your day together.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Which devices does Kukku support?</summary>
+          <p>Kukku is available for iPhone on the App Store. On-device model availability can vary with device memory.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does Kukku send my data to the cloud?</summary>
+          <p>No. By default everything stays on your device. You can optionally connect a remote model with your own API key — Kukku always asks first.</p>
+        </details>
+      </div>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Is Kukku really private?","acceptedAnswer":{"@type":"Answer","text":"Yes. Kukku runs its AI on your device and does not collect your data — your meals, money, habits and health stay on your iPhone."}},
+          {"@type":"Question","name":"Does Kukku work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. The on-device model keeps working without a connection — put your iPhone in airplane mode and Kukku still answers."}},
+          {"@type":"Question","name":"What AI model does Kukku use?","acceptedAnswer":{"@type":"Answer","text":"Kukku runs Google Gemma 4 locally on your iPhone, with optional escalation to a more powerful model using your own key."}},
+          {"@type":"Question","name":"What can Kukku do?","acceptedAnswer":{"@type":"Answer","text":"Ready-made agents for health & fitness, nutrition, habits and expenses, plus custom agents. Snap a receipt or a meal, track habits, and get a daily Smart Card that ties your day together."}},
+          {"@type":"Question","name":"Which devices does Kukku support?","acceptedAnswer":{"@type":"Answer","text":"Kukku is available for iPhone on the App Store. On-device model availability can vary with device memory."}},
+          {"@type":"Question","name":"Does Kukku send my data to the cloud?","acceptedAnswer":{"@type":"Answer","text":"No. By default everything stays on your device. You can optionally connect a remote model with your own API key — Kukku always asks first."}}
+        ]
+      }
+      </script>
+    </section>
+
     <section id="contact" class="section contact">
       <div>
         <p class="eyebrow">Contact</p>
@@ -510,8 +686,11 @@
   </main>
 
   <footer>
-    <p>© 2026 Ibhan AI Labs Pte Ltd. · <a href="blog/">Blog</a> · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></p>
+    <p>© 2026 <a href="https://www.ibhanai.com" target="_blank" rel="noopener noreferrer">Ibhan AI Labs Pte Ltd</a>. · <a href="blog/">Blog</a> · <a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></p>
   </footer>
+  <script>
+    (function(){var n=document.querySelector(".nav");if(!n)return;var b=n.querySelector(".nav-toggle"),l=n.querySelector(".nav-links");if(!b||!l)return;b.addEventListener("click",function(){var o=n.classList.toggle("nav-open");b.setAttribute("aria-expanded",o?"true":"false");});l.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("nav-open");b.setAttribute("aria-expanded","false");});});})();
+  </script>
 </body>
 
 </html>
