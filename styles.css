@@ -1315,7 +1315,7 @@ a.agent-card:hover { border-color: var(--sea); }
 }
 
 /* FAQ accordion */
-.faq-list { display: grid; gap: 10px; max-width: 760px; margin: 0 auto; }
+.faq-list { display: grid; gap: 10px; max-width: 760px; margin: 0; }
 .faq-item {
   background: #fff;
   border: 1px solid var(--line);
